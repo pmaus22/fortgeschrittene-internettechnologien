@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net;
 using System.Threading.Tasks;
 using FAP_Client.Models;
+using System.Windows.Forms;
 
 namespace FAP_Client
 {
@@ -17,19 +18,20 @@ namespace FAP_Client
                 "addUser", user);
             response.EnsureSuccessStatusCode();
 
-            // return URI of the created resource.
+            // Return URI of the created resource.
             return response.Headers.Location;
         }
 
-        static async Task<User> GetUserAsync(string path)
+        static async Task<Response> CheckLoginNameAsync(string loginName)
         {
-            User user = null;
-            HttpResponseMessage response = await client.GetAsync(path);
+            Response ergebnis = null;
+            HttpResponseMessage response = await client.GetAsync($"checkLoginName?id={loginName}");
             if (response.IsSuccessStatusCode)
             {
-                user = await response.Content.ReadAsAsync<User>();
+                // Deserialize the resource from the response body.
+                ergebnis = await response.Content.ReadAsAsync<Response>();
             }
-            return user;
+            return ergebnis;
         }
 
         static async Task<User> UpdateUserAsync(User user)

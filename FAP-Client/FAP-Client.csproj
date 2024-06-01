@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Passwort.cs" />
+    <Compile Include="Models\Response.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="UserControl1.cs">
