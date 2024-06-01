@@ -76,6 +76,8 @@
     <Compile Include="Models\PostalCode.cs" />
     <Compile Include="Models\GetOrtResponse.cs" />
     <Compile Include="Models\BoolResponse.cs" />
+    <Compile Include="Models\SetStandortBody.cs" />
+    <Compile Include="Models\Standort.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="UserControl1.cs">

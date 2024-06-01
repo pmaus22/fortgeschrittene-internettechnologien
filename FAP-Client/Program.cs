@@ -72,22 +72,28 @@ namespace FAP_Client
             return ergebnis;
         }
 
-        static async Task<User> UpdateUserAsync(User user)
+        static async Task<BoolResponse> SetStandortAsync(SetStandortBody setStandortBody)
         {
-            HttpResponseMessage response = await client.PutAsJsonAsync(
-                $"api/users/{user.loginName}", user);
-            response.EnsureSuccessStatusCode();
-
-            // Deserialize the updated product from the response body.
-            user = await response.Content.ReadAsAsync<User>();
-            return user;
+            BoolResponse ergebnis = null;
+            HttpResponseMessage response = await client.PutAsJsonAsync("setStandort", setStandortBody);
+            if (response.IsSuccessStatusCode)
+            {
+                ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
+            }
+            // Return the deserialized resource from the response body.
+            return ergebnis;
         }
 
-        static async Task<HttpStatusCode> DeleteuserAsync(long id)
+        static async Task<Standort> GetStandortAsync(string login, string session, string id)
         {
-            HttpResponseMessage response = await client.DeleteAsync(
-                $"api/users/{id}");
-            return response.StatusCode;
+            Standort ergebnis = null;
+            HttpResponseMessage response = await client.GetAsync($"getStandort?login={login}&session={session}&id={id}");
+            if (response.IsSuccessStatusCode)
+            {
+                ergebnis = await response.Content.ReadAsAsync<Standort>();
+            }
+            // Return the deserialized resource from the response body.
+            return ergebnis;
         }
 
         static void Main()
