@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Models\AddUserResponse.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\GetBenutzerResponse.cs" />
     <Compile Include="Models\LoginBody.cs" />
     <Compile Include="Models\LoginResponse.cs" />
     <Compile Include="Models\LogoutBody.cs" />

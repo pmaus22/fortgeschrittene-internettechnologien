@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using FAP_Client.Models;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace FAP_Client
 {
@@ -91,6 +92,18 @@ namespace FAP_Client
             if (response.IsSuccessStatusCode)
             {
                 ergebnis = await response.Content.ReadAsAsync<Standort>();
+            }
+            // Return the deserialized resource from the response body.
+            return ergebnis;
+        }
+
+        static async Task<GetBenutzerResponse> GetBenutzerAsync(string login, string session)
+        {
+            GetBenutzerResponse ergebnis = null;
+            HttpResponseMessage response = await client.GetAsync($"getBenutzer?login={login}&session={session}");
+            if (response.IsSuccessStatusCode)
+            {
+                ergebnis = await response.Content.ReadAsAsync<GetBenutzerResponse>();
             }
             // Return the deserialized resource from the response body.
             return ergebnis;
