@@ -12,23 +12,25 @@ namespace FAP_Client
     {
         static readonly HttpClient client = new HttpClient();
 
-        static async Task<Uri> AddUserAsync(User user)
+        static async Task<AddUserResponse> AddUserAsync(User user)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync(
-                "addUser", user);
-            response.EnsureSuccessStatusCode();
-
-            // Return URI of the created resource.
-            return response.Headers.Location;
-        }
-
-        static async Task<CheckLoginNameResponse> CheckLoginNameAsync(string loginName)
-        {
-            CheckLoginNameResponse ergebnis = null;
-            HttpResponseMessage response = await client.GetAsync($"checkLoginName?id={loginName}");
+            AddUserResponse ergebnis = null;
+            HttpResponseMessage response = await client.PostAsJsonAsync("addUser", user);
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<CheckLoginNameResponse>();
+                ergebnis = await response.Content.ReadAsAsync<AddUserResponse>();
+            }
+            // Return the deserialized resource from the response body.
+            return ergebnis;
+        }
+
+        static async Task<BoolResponse> CheckLoginNameAsync(string id)
+        {
+            BoolResponse ergebnis = null;
+            HttpResponseMessage response = await client.GetAsync($"checkLoginName?id={id}");
+            if (response.IsSuccessStatusCode)
+            {
+                ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
             }
             // Return the deserialized resource from the response body.
             return ergebnis;
@@ -36,14 +38,38 @@ namespace FAP_Client
 
         static async Task<GetOrtResponse> GetOrtAsync(int postalCode, string username)
         {
-            GetOrtResponse antwort = null;
+            GetOrtResponse ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"getOrt?postalcode={postalCode}&username={username}");
             if (response.IsSuccessStatusCode)
             {
-                antwort = await response.Content.ReadAsAsync<GetOrtResponse>();
+                ergebnis = await response.Content.ReadAsAsync<GetOrtResponse>();
             }
             // Return the deserialized resource from the response body.
-            return antwort;
+            return ergebnis;
+        }
+
+        static async Task<LoginResponse> LoginAsync(LoginBody loginBody)
+        {
+            LoginResponse ergebnis = null;
+            HttpResponseMessage response = await client.PostAsJsonAsync("login", loginBody);
+            if (response.IsSuccessStatusCode)
+            {
+                ergebnis = await response.Content.ReadAsAsync<LoginResponse>();
+            }
+            // Return the deserialized resource from the response body.
+            return ergebnis;
+        }
+
+        static async Task<BoolResponse> LogoutAsync(LogoutBody logoutBody)
+        {
+            BoolResponse ergebnis = null;
+            HttpResponseMessage response = await client.PostAsJsonAsync("logout", logoutBody);
+            if (response.IsSuccessStatusCode)
+            {
+                ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
+            }
+            // Return the deserialized resource from the response body.
+            return ergebnis;
         }
 
         static async Task<User> UpdateUserAsync(User user)

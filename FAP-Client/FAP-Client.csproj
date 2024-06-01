@@ -67,11 +67,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AddUserResponse.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\LoginBody.cs" />
+    <Compile Include="Models\LoginResponse.cs" />
+    <Compile Include="Models\LogoutBody.cs" />
     <Compile Include="Models\Passwort.cs" />
     <Compile Include="Models\PostalCode.cs" />
     <Compile Include="Models\GetOrtResponse.cs" />
-    <Compile Include="Models\CheckLoginNameResponse.cs" />
+    <Compile Include="Models\BoolResponse.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="UserControl1.cs">

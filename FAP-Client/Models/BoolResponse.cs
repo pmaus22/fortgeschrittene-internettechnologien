@@ -1,6 +1,6 @@
 ﻿namespace FAP_Client.Models
 {
-    internal class CheckLoginNameResponse
+    internal class BoolResponse
     {
         public bool ergebnis { get; set; }
     }
