@@ -22,22 +22,34 @@ namespace FAP_Client
             return response.Headers.Location;
         }
 
-        static async Task<Response> CheckLoginNameAsync(string loginName)
+        static async Task<CheckLoginNameResponse> CheckLoginNameAsync(string loginName)
         {
-            Response ergebnis = null;
+            CheckLoginNameResponse ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"checkLoginName?id={loginName}");
             if (response.IsSuccessStatusCode)
             {
-                // Deserialize the resource from the response body.
-                ergebnis = await response.Content.ReadAsAsync<Response>();
+                ergebnis = await response.Content.ReadAsAsync<CheckLoginNameResponse>();
             }
+            // Return the deserialized resource from the response body.
             return ergebnis;
+        }
+
+        static async Task<GetOrtResponse> GetOrtAsync(int postalCode, string username)
+        {
+            GetOrtResponse antwort = null;
+            HttpResponseMessage response = await client.GetAsync($"getOrt?postalcode={postalCode}&username={username}");
+            if (response.IsSuccessStatusCode)
+            {
+                antwort = await response.Content.ReadAsAsync<GetOrtResponse>();
+            }
+            // Return the deserialized resource from the response body.
+            return antwort;
         }
 
         static async Task<User> UpdateUserAsync(User user)
         {
             HttpResponseMessage response = await client.PutAsJsonAsync(
-                $"api/users/{user.LoginName}", user);
+                $"api/users/{user.loginName}", user);
             response.EnsureSuccessStatusCode();
 
             // Deserialize the updated product from the response body.

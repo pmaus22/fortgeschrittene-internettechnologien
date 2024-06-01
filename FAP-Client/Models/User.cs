@@ -2,25 +2,25 @@
 {
     public class User
     {
-        public string LoginName { get; set; }
+        public string loginName { get; set; }
         
-        public Passwort Passwort { get; set; }
+        public Passwort passwort { get; set; }
 
-        public string Vorname { get; set; }
+        public string vorname { get; set; }
     
-        public string Nachname { get; set; }
+        public string nachname { get; set; }
 
-        public string Strasse { get; set; }
+        public string strasse { get; set; }
 
-        public string Plz { get; set; }
+        public string plz { get; set; }
 
-        public string Ort { get; set; }
+        public string ort { get; set; }
 
-        public string Land { get; set; }
+        public string land { get; set; }
 
-        public string Telefon { get; set; }
+        public string telefon { get; set; }
 
-        public Email Email { get; set; }
+        public Email email { get; set; }
 
     }
 }
