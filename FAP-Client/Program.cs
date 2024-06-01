@@ -20,7 +20,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<AddUserResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -33,7 +32,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -46,7 +44,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<GetOrtResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -59,7 +56,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<LoginResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -72,7 +68,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -85,7 +80,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -98,7 +92,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<Standort>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
@@ -111,7 +104,6 @@ namespace FAP_Client
             {
                 ergebnis = await response.Content.ReadAsAsync<GetBenutzerResponse>();
             }
-            // Return the deserialized resource from the response body.
             return ergebnis;
         }
 
