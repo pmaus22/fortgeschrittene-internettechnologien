@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FAP_Client.Models;
 
 namespace FAP_Client
 {
@@ -22,24 +23,13 @@ namespace FAP_Client
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            var user = new User
+            {
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            };
+            var addUserResponse = Program.AddUserAsync(user);
         }
     }
 }

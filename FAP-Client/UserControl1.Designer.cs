@@ -60,7 +60,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 26);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -71,7 +70,6 @@
             this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Vorname";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -100,7 +98,6 @@
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nutzername";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox4
             // 

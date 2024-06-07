@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace FAP_Client
 {
-    internal class Program
+    public class Program
     {
         static readonly HttpClient client = new HttpClient();
 
         // POST: FAPServer/service/fapservice/addUser
-        static async Task<AddUserResponse> AddUserAsync(User user)
+        public static async Task<AddUserResponse> AddUserAsync(User user)
         {
             AddUserResponse ergebnis = null;
             HttpResponseMessage response = await client.PostAsJsonAsync("addUser", user);
@@ -24,7 +24,7 @@ namespace FAP_Client
         }
 
         // GET: FAPServer/service/fapservice/checkLoginName
-        static async Task<BoolResponse> CheckLoginNameAsync(string id)
+        public static async Task<BoolResponse> CheckLoginNameAsync(string id)
         {
             BoolResponse ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"checkLoginName?id={id}");
@@ -36,7 +36,7 @@ namespace FAP_Client
         }
 
         // GET: FAPServer/service/fapservice/getOrt
-        static async Task<GetOrtResponse> GetOrtAsync(int postalCode, string username)
+        public static async Task<GetOrtResponse> GetOrtAsync(int postalCode, string username)
         {
             GetOrtResponse ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"getOrt?postalcode={postalCode}&username={username}");
@@ -48,7 +48,7 @@ namespace FAP_Client
         }
 
         // POST: FAPServer/service/fapservice/login
-        static async Task<LoginResponse> LoginAsync(LoginBody loginBody)
+        public static async Task<LoginResponse> LoginAsync(LoginBody loginBody)
         {
             LoginResponse ergebnis = null;
             HttpResponseMessage response = await client.PostAsJsonAsync("login", loginBody);
@@ -72,7 +72,7 @@ namespace FAP_Client
         }
 
         // PUT: FAPServer/service/fapservice/setStandort
-        static async Task<BoolResponse> SetStandortAsync(SetStandortBody setStandortBody)
+        public static async Task<BoolResponse> SetStandortAsync(SetStandortBody setStandortBody)
         {
             BoolResponse ergebnis = null;
             HttpResponseMessage response = await client.PutAsJsonAsync("setStandort", setStandortBody);
@@ -96,7 +96,7 @@ namespace FAP_Client
         }
 
         // GET: FAPServer/service/fapservice/getBenutzer
-        static async Task<GetBenutzerResponse> GetBenutzerAsync(string login, string session)
+        public static async Task<GetBenutzerResponse> GetBenutzerAsync(string login, string session)
         {
             GetBenutzerResponse ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"getBenutzer?login={login}&session={session}");
@@ -107,7 +107,7 @@ namespace FAP_Client
             return ergebnis;
         }
 
-        static void Main()
+        public static void Main()
         {
             client.BaseAddress = new Uri("http://localhost:8080/FAPServer/service/fapservice");
             client.DefaultRequestHeaders.Accept.Clear();

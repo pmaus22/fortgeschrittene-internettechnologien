@@ -2,7 +2,7 @@
 
 namespace FAP_Client.Models
 {
-    internal class GetOrtResponse
+    public class GetOrtResponse
     {
         public List<PostalCode> postalCodes { get; set; }
     }
