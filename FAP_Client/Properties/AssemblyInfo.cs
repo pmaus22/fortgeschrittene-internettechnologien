@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FAP-Client")]
+[assembly: AssemblyTitle("FAP_Client")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("d.velop AG")]
-[assembly: AssemblyProduct("FAP-Client")]
+[assembly: AssemblyProduct("FAP_Client")]
 [assembly: AssemblyCopyright("Copyright © d.velop AG 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e896f6a7-216a-4551-bb36-bc4083f1ab13")]
+[assembly: Guid("2d4aeb0f-7432-4405-a1e8-9b65919684ec")]
 
 // Version information for an assembly consists of the following four values:
 //

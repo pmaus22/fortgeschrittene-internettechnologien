@@ -1,14 +1,17 @@
-﻿using System;
-using System.Net.Http.Headers;
+﻿using FAP_Client.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using FAP_Client.Models;
 using System.Windows.Forms;
 
 namespace FAP_Client
 {
-    public class Program
+    internal static class Program
     {
+        // Client object for HTTP requests.
         static readonly HttpClient client = new HttpClient();
 
         // POST: FAPServer/service/fapservice/addUser
@@ -107,11 +110,19 @@ namespace FAP_Client
             return ergebnis;
         }
 
-        public static void Main()
+        /// The main entry point for the application.
+        [STAThread]
+        static void Main()
         {
+            // Configure HTTP Client.
             client.BaseAddress = new Uri("http://localhost:8080/FAPServer/service/fapservice");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            // Configure and run Windows Forms application.
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }

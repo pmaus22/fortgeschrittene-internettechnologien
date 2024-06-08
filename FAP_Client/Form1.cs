@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FAP_Client
 {
-    public partial class RegisterForm : Form
+    public partial class Form1 : Form
     {
-        public RegisterForm()
+        public Form1()
         {
             InitializeComponent();
         }
