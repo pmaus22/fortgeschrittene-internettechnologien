@@ -18,38 +18,6 @@ namespace FAP_Client
             InitializeComponent();
         }
 
-        private async void buttonOk_Click(object sender, EventArgs e)
-        {
-            var user = new User
-            {
-                loginName = textBoxLoginName.Text,
-                passwort = new Passwort
-                {
-                    passwort = textBoxPasswort.Text
-                },
-                vorname = textBoxVorname.Text,
-                nachname = textBoxNachname.Text,
-                strasse = textBoxStrasse.Text,
-                plz = textBoxPlz.Text,
-                ort = textBoxOrt.Text,
-                land = textBoxLand.Text,
-                telefon = textBoxTelefon.Text,
-                email = new Email
-                {
-                    adresse = textBoxEmail.Text
-                }
-            };
-            var addUserResponse = await Program.AddUserAsync(user);
-            if (addUserResponse.ergebnis)
-            {
-
-            }
-            else
-            {
-                labelMessage.Text = "Fehler: " + addUserResponse.meldung.ToString();
-            }
-        }
-
         private async void textBoxPlz_TextChanged(object sender, EventArgs e)
         {
             if (textBoxPlz.Text.Length == 5 && textBoxPlz.Text.All(char.IsDigit))
@@ -80,18 +48,48 @@ namespace FAP_Client
             }
         }
 
-        private void textBoxPasswortWiederholen_TextChanged(object sender, EventArgs e)
+        private async void buttonOk_Click(object sender, EventArgs e)
         {
             if (textBoxPasswort.Text == textBoxPasswortWiederholen.Text)
             {
-                checkBoxPasswort.Checked = true;
-                checkBoxPasswort.Text = "Passwörter stimmen überein";
+                var user = new User
+                {
+                    loginName = textBoxLoginName.Text,
+                    passwort = new Passwort
+                    {
+                        passwort = textBoxPasswort.Text
+                    },
+                    vorname = textBoxVorname.Text,
+                    nachname = textBoxNachname.Text,
+                    strasse = textBoxStrasse.Text,
+                    plz = textBoxPlz.Text,
+                    ort = textBoxOrt.Text,
+                    land = textBoxLand.Text,
+                    telefon = textBoxTelefon.Text,
+                    email = new Email
+                    {
+                        adresse = textBoxEmail.Text
+                    }
+                };
+                var addUserResponse = await Program.AddUserAsync(user);
+                if (addUserResponse.ergebnis)
+                {
+                    // TODO: Go To Anmeldeseite
+                }
+                else
+                {
+                    labelMessage.Text = "Fehler: " + addUserResponse.meldung.ToString();
+                }
             }
             else
             {
-                checkBoxPasswort.Checked = false;
-                checkBoxPasswort.Text = "Passwörter stimmen nicht überein";
+                labelMessage.Text = "Fehler: Passwörter stimmen nicht überein";
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            // TODO: Go To Anmeldeseite
         }
     }
 }

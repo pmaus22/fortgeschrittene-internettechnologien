@@ -122,7 +122,7 @@ namespace FAP_Client
             // Configure and run Windows Forms application.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegisterForm());
+            Application.Run(new LoginForm());
         }
     }
 }

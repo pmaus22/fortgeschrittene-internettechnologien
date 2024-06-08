@@ -53,7 +53,6 @@
             this.labelMessage = new System.Windows.Forms.Label();
             this.labelTelefon = new System.Windows.Forms.Label();
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
-            this.checkBoxPasswort = new System.Windows.Forms.CheckBox();
             this.textBoxPlz = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -67,9 +66,11 @@
             this.buttonCancel.TabIndex = 50;
             this.buttonCancel.Text = "Abbrechen";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonOk
             // 
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Location = new System.Drawing.Point(19, 323);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonOk.Name = "buttonOk";
@@ -138,11 +139,12 @@
             this.checkBoxLoginName.AutoCheck = false;
             this.checkBoxLoginName.AutoSize = true;
             this.checkBoxLoginName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxLoginName.Location = new System.Drawing.Point(627, 18);
+            this.checkBoxLoginName.Location = new System.Drawing.Point(627, 17);
             this.checkBoxLoginName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBoxLoginName.Name = "checkBoxLoginName";
-            this.checkBoxLoginName.Size = new System.Drawing.Size(22, 21);
+            this.checkBoxLoginName.Size = new System.Drawing.Size(231, 24);
             this.checkBoxLoginName.TabIndex = 42;
+            this.checkBoxLoginName.Text = "Nutzername nicht verfügbar";
             this.checkBoxLoginName.UseVisualStyleBackColor = true;
             // 
             // labelOrt
@@ -191,7 +193,6 @@
             this.textBoxPasswortWiederholen.PasswordChar = '*';
             this.textBoxPasswortWiederholen.Size = new System.Drawing.Size(148, 26);
             this.textBoxPasswortWiederholen.TabIndex = 36;
-            this.textBoxPasswortWiederholen.TextChanged += new System.EventHandler(this.textBoxPasswortWiederholen_TextChanged);
             // 
             // labelPasswort
             // 
@@ -293,18 +294,6 @@
             this.textBoxTelefon.Size = new System.Drawing.Size(148, 26);
             this.textBoxTelefon.TabIndex = 52;
             // 
-            // checkBoxPasswort
-            // 
-            this.checkBoxPasswort.AutoCheck = false;
-            this.checkBoxPasswort.AutoSize = true;
-            this.checkBoxPasswort.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxPasswort.Location = new System.Drawing.Point(627, 93);
-            this.checkBoxPasswort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBoxPasswort.Name = "checkBoxPasswort";
-            this.checkBoxPasswort.Size = new System.Drawing.Size(22, 21);
-            this.checkBoxPasswort.TabIndex = 54;
-            this.checkBoxPasswort.UseVisualStyleBackColor = true;
-            // 
             // textBoxPlz
             // 
             this.textBoxPlz.Location = new System.Drawing.Point(104, 86);
@@ -319,7 +308,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 500);
             this.Controls.Add(this.textBoxPlz);
-            this.Controls.Add(this.checkBoxPasswort);
             this.Controls.Add(this.labelTelefon);
             this.Controls.Add(this.textBoxTelefon);
             this.Controls.Add(this.labelMessage);
@@ -379,7 +367,6 @@
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.Label labelTelefon;
         private System.Windows.Forms.TextBox textBoxTelefon;
-        private System.Windows.Forms.CheckBox checkBoxPasswort;
         private System.Windows.Forms.TextBox textBoxPlz;
     }
 }
