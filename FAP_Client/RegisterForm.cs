@@ -50,9 +50,19 @@ namespace FAP_Client
             }
         }
 
-        private void textBoxPlz_TextChanged(object sender, EventArgs e)
+        private async void textBoxPlz_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBoxPlz.Text.Length == 5 && textBoxPlz.Text.All(char.IsDigit))
+            {
+                var getOrtResponse = await Program.GetOrtAsync(textBoxPlz.Text, "pmaus22");
+                try
+                {
+                    textBoxOrt.Text = getOrtResponse.postalCodes[0].placeName;
+                }
+                catch
+                {
+                }
+            }
         }
 
         private async void textBoxLoginName_TextChanged(object sender, EventArgs e)
