@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace FAP_Client
 {
-    internal static class Program
+    public static class Program
     {
         // Client object for HTTP requests.
         static readonly HttpClient client = new HttpClient();
@@ -39,7 +39,7 @@ namespace FAP_Client
         }
 
         // GET: FAPServer/service/fapservice/getOrt
-        public static async Task<GetOrtResponse> GetOrtAsync(int postalCode, string username)
+        public static async Task<GetOrtResponse> GetOrtAsync(string postalCode, string username)
         {
             GetOrtResponse ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"getOrt?postalcode={postalCode}&username={username}");
@@ -115,14 +115,14 @@ namespace FAP_Client
         static void Main()
         {
             // Configure HTTP Client.
-            client.BaseAddress = new Uri("http://localhost:8080/FAPServer/service/fapservice");
+            client.BaseAddress = new Uri("http://localhost:8080/FAPServer/service/fapservice/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // Configure and run Windows Forms application.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new RegisterForm());
         }
     }
 }
