@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.labelMessage = new System.Windows.Forms.Label();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
@@ -149,8 +150,9 @@
             this.Controls.Add(this.textBoxPasswort);
             this.Controls.Add(this.labelLoginName);
             this.Controls.Add(this.textBoxLoginName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
-            this.Text = "Anmeldung";
+            this.Text = "Anmeldung - FAP";
             this.ResumeLayout(false);
             this.PerformLayout();
 

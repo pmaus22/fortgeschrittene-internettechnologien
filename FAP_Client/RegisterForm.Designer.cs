@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOk = new System.Windows.Forms.Button();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -326,8 +327,9 @@
             this.Controls.Add(this.textBoxNachname);
             this.Controls.Add(this.labelVorname);
             this.Controls.Add(this.textBoxVorname);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
-            this.Text = "Registrierung";
+            this.Text = "Registrierung - FAP";
             this.ResumeLayout(false);
             this.PerformLayout();
 
