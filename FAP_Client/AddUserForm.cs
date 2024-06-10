@@ -11,18 +11,22 @@ using System.Windows.Forms;
 
 namespace FAP_Client
 {
-    public partial class RegisterForm : Form
+    public partial class AddUserForm : Form
     {
-        public RegisterForm()
+        public AddUserForm()
         {
             InitializeComponent();
         }
 
         private async void textBoxPlz_TextChanged(object sender, EventArgs e)
         {
+            // Check if the entered text is a postal code
             if (textBoxPlz.Text.Length == 5 && textBoxPlz.Text.All(char.IsDigit))
             {
+                // Send request to server to get the corresponding place
                 var getOrtResponse = await Program.GetOrtAsync(textBoxPlz.Text, "pmaus22");
+
+                // Fill place name automatically when the server responds successfully
                 try
                 {
                     textBoxOrt.Text = getOrtResponse.postalCodes[0].placeName;
@@ -35,23 +39,38 @@ namespace FAP_Client
 
         private async void textBoxLoginName_TextChanged(object sender, EventArgs e)
         {
-            var boolResponse = await Program.CheckLoginNameAsync(textBoxLoginName.Text);
-            if(boolResponse.ergebnis)
+            // Check if there ist any text
+            if (textBoxLoginName.Text.Length == 0)
             {
-                checkBoxLoginName.Checked = true;
-                checkBoxLoginName.Text = "Nutzername verfügbar";
+                labelCheckLoginName.Text = "";
             }
+
+            // Check if the entered text is an available login name
             else
             {
-                checkBoxLoginName.Checked = false;
-                checkBoxLoginName.Text = "Nutzername nicht verfügbar";
+                // Send request to server to check login name
+                var boolResponse = await Program.CheckLoginNameAsync(textBoxLoginName.Text);
+
+                // Say that login name is available
+                if (boolResponse.ergebnis)
+                {
+                    labelCheckLoginName.Text = "✅ Nutzername verfügbar";
+                }
+
+                // Say that login name is unavailable
+                else
+                {
+                    labelCheckLoginName.Text = "❌ Nutzername nicht verfügbar";
+                }
             }
         }
 
         private async void buttonOk_Click(object sender, EventArgs e)
         {
+            // Check if password was entered correctly
             if (textBoxPasswort.Text == textBoxPasswortWiederholen.Text)
             {
+                // Create user object with given attributes
                 var user = new User
                 {
                     loginName = textBoxLoginName.Text,
@@ -71,16 +90,24 @@ namespace FAP_Client
                         adresse = textBoxEmail.Text
                     }
                 };
+
+                // Send request to the server to add new user
                 var addUserResponse = await Program.AddUserAsync(user);
+
+                // Close window after successful user registration
                 if (addUserResponse.ergebnis)
                 {
-                    // TODO: Go To Anmeldeseite
+                    this.Dispose();
                 }
+
+                // Show error message from the server response
                 else
                 {
                     labelMessage.Text = "Fehler: " + addUserResponse.meldung.ToString();
                 }
             }
+
+            // Show error message when password was entered incorrectly
             else
             {
                 labelMessage.Text = "Fehler: Passwörter stimmen nicht überein";
@@ -89,7 +116,8 @@ namespace FAP_Client
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            // TODO: Go To Anmeldeseite
+            // Close window
+            this.Dispose();
         }
     }
 }
