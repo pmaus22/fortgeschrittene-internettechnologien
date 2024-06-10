@@ -21,8 +21,8 @@ namespace FAP_Client
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             // Open registration window
-            RegisterForm registerForm = new RegisterForm();
-            DialogResult dialogResult = registerForm.ShowDialog();
+            AddUserForm addUser = new AddUserForm();
+            DialogResult dialogResult = addUser.ShowDialog();
         }
 
         private async void buttonLogin_Click(object sender, EventArgs e)
@@ -40,10 +40,14 @@ namespace FAP_Client
             // Send login request to server
             var loginResponse = await Program.LoginAsync(loginBody);
 
-            // Save session ID and go to main app
+            // Save username and session ID, close login window and open main app
             if (loginResponse.sessionID != null)
             {
-                // TODO: Go To Hauptseite + sessionID merken
+                GetStandortForm.CurrentLoginName = textBoxLoginName.Text;
+                GetStandortForm.CurrentSessionID = loginResponse.sessionID;
+                this.Hide();
+                GetStandortForm getStandort = new GetStandortForm();
+                getStandort.ShowDialog();
             }
 
             // Show error message when login fails

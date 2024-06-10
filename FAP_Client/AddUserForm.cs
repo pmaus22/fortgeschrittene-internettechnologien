@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FAP_Client
 {
-    public partial class RegisterForm : Form
+    public partial class AddUserForm : Form
     {
-        public RegisterForm()
+        public AddUserForm()
         {
             InitializeComponent();
         }
