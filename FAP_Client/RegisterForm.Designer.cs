@@ -36,7 +36,6 @@
             this.textBoxLand = new System.Windows.Forms.TextBox();
             this.labelStrasse = new System.Windows.Forms.Label();
             this.textBoxStrasse = new System.Windows.Forms.TextBox();
-            this.checkBoxLoginName = new System.Windows.Forms.CheckBox();
             this.labelOrt = new System.Windows.Forms.Label();
             this.textBoxOrt = new System.Windows.Forms.TextBox();
             this.labelPlz = new System.Windows.Forms.Label();
@@ -54,28 +53,27 @@
             this.labelTelefon = new System.Windows.Forms.Label();
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
             this.textBoxPlz = new System.Windows.Forms.TextBox();
+            this.labelCheckLoginName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCancel
             // 
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(140, 323);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 35);
-            this.buttonCancel.TabIndex = 50;
+            this.buttonCancel.TabIndex = 12;
             this.buttonCancel.Text = "Abbrechen";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonOk
             // 
-            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOk.Location = new System.Drawing.Point(19, 323);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(112, 35);
-            this.buttonOk.TabIndex = 49;
+            this.buttonOk.TabIndex = 11;
             this.buttonOk.Text = "Ok";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
@@ -96,7 +94,7 @@
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(148, 26);
-            this.textBoxEmail.TabIndex = 47;
+            this.textBoxEmail.TabIndex = 6;
             // 
             // labelLand
             // 
@@ -114,7 +112,7 @@
             this.textBoxLand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLand.Name = "textBoxLand";
             this.textBoxLand.Size = new System.Drawing.Size(148, 26);
-            this.textBoxLand.TabIndex = 45;
+            this.textBoxLand.TabIndex = 5;
             // 
             // labelStrasse
             // 
@@ -132,20 +130,7 @@
             this.textBoxStrasse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxStrasse.Name = "textBoxStrasse";
             this.textBoxStrasse.Size = new System.Drawing.Size(148, 26);
-            this.textBoxStrasse.TabIndex = 43;
-            // 
-            // checkBoxLoginName
-            // 
-            this.checkBoxLoginName.AutoCheck = false;
-            this.checkBoxLoginName.AutoSize = true;
-            this.checkBoxLoginName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.checkBoxLoginName.Location = new System.Drawing.Point(627, 17);
-            this.checkBoxLoginName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBoxLoginName.Name = "checkBoxLoginName";
-            this.checkBoxLoginName.Size = new System.Drawing.Size(231, 24);
-            this.checkBoxLoginName.TabIndex = 42;
-            this.checkBoxLoginName.Text = "Nutzername nicht verfügbar";
-            this.checkBoxLoginName.UseVisualStyleBackColor = true;
+            this.textBoxStrasse.TabIndex = 4;
             // 
             // labelOrt
             // 
@@ -163,7 +148,7 @@
             this.textBoxOrt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxOrt.Name = "textBoxOrt";
             this.textBoxOrt.Size = new System.Drawing.Size(148, 26);
-            this.textBoxOrt.TabIndex = 40;
+            this.textBoxOrt.TabIndex = 3;
             // 
             // labelPlz
             // 
@@ -178,7 +163,7 @@
             // labelPasswortWiederholen
             // 
             this.labelPasswortWiederholen.AutoSize = true;
-            this.labelPasswortWiederholen.Location = new System.Drawing.Point(300, 92);
+            this.labelPasswortWiederholen.Location = new System.Drawing.Point(300, 88);
             this.labelPasswortWiederholen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPasswortWiederholen.Name = "labelPasswortWiederholen";
             this.labelPasswortWiederholen.Size = new System.Drawing.Size(163, 20);
@@ -187,12 +172,12 @@
             // 
             // textBoxPasswortWiederholen
             // 
-            this.textBoxPasswortWiederholen.Location = new System.Drawing.Point(471, 89);
+            this.textBoxPasswortWiederholen.Location = new System.Drawing.Point(471, 85);
             this.textBoxPasswortWiederholen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPasswortWiederholen.Name = "textBoxPasswortWiederholen";
             this.textBoxPasswortWiederholen.PasswordChar = '*';
             this.textBoxPasswortWiederholen.Size = new System.Drawing.Size(148, 26);
-            this.textBoxPasswortWiederholen.TabIndex = 36;
+            this.textBoxPasswortWiederholen.TabIndex = 10;
             // 
             // labelPasswort
             // 
@@ -211,7 +196,7 @@
             this.textBoxPasswort.Name = "textBoxPasswort";
             this.textBoxPasswort.PasswordChar = '*';
             this.textBoxPasswort.Size = new System.Drawing.Size(148, 26);
-            this.textBoxPasswort.TabIndex = 34;
+            this.textBoxPasswort.TabIndex = 9;
             // 
             // labelLoginName
             // 
@@ -229,7 +214,7 @@
             this.textBoxLoginName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLoginName.Name = "textBoxLoginName";
             this.textBoxLoginName.Size = new System.Drawing.Size(148, 26);
-            this.textBoxLoginName.TabIndex = 32;
+            this.textBoxLoginName.TabIndex = 8;
             this.textBoxLoginName.TextChanged += new System.EventHandler(this.textBoxLoginName_TextChanged);
             // 
             // labelNachname
@@ -248,7 +233,7 @@
             this.textBoxNachname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxNachname.Name = "textBoxNachname";
             this.textBoxNachname.Size = new System.Drawing.Size(148, 26);
-            this.textBoxNachname.TabIndex = 30;
+            this.textBoxNachname.TabIndex = 1;
             // 
             // labelVorname
             // 
@@ -266,7 +251,7 @@
             this.textBoxVorname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxVorname.Name = "textBoxVorname";
             this.textBoxVorname.Size = new System.Drawing.Size(148, 26);
-            this.textBoxVorname.TabIndex = 28;
+            this.textBoxVorname.TabIndex = 0;
             // 
             // labelMessage
             // 
@@ -292,21 +277,30 @@
             this.textBoxTelefon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTelefon.Name = "textBoxTelefon";
             this.textBoxTelefon.Size = new System.Drawing.Size(148, 26);
-            this.textBoxTelefon.TabIndex = 52;
+            this.textBoxTelefon.TabIndex = 7;
             // 
             // textBoxPlz
             // 
             this.textBoxPlz.Location = new System.Drawing.Point(104, 86);
             this.textBoxPlz.Name = "textBoxPlz";
             this.textBoxPlz.Size = new System.Drawing.Size(148, 26);
-            this.textBoxPlz.TabIndex = 56;
+            this.textBoxPlz.TabIndex = 2;
             this.textBoxPlz.TextChanged += new System.EventHandler(this.textBoxPlz_TextChanged);
+            // 
+            // labelCheckLoginName
+            // 
+            this.labelCheckLoginName.AutoSize = true;
+            this.labelCheckLoginName.Location = new System.Drawing.Point(626, 17);
+            this.labelCheckLoginName.Name = "labelCheckLoginName";
+            this.labelCheckLoginName.Size = new System.Drawing.Size(0, 20);
+            this.labelCheckLoginName.TabIndex = 57;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 500);
+            this.ClientSize = new System.Drawing.Size(888, 500);
+            this.Controls.Add(this.labelCheckLoginName);
             this.Controls.Add(this.textBoxPlz);
             this.Controls.Add(this.labelTelefon);
             this.Controls.Add(this.textBoxTelefon);
@@ -319,7 +313,6 @@
             this.Controls.Add(this.textBoxLand);
             this.Controls.Add(this.labelStrasse);
             this.Controls.Add(this.textBoxStrasse);
-            this.Controls.Add(this.checkBoxLoginName);
             this.Controls.Add(this.labelOrt);
             this.Controls.Add(this.textBoxOrt);
             this.Controls.Add(this.labelPlz);
@@ -350,7 +343,6 @@
         private System.Windows.Forms.TextBox textBoxLand;
         private System.Windows.Forms.Label labelStrasse;
         private System.Windows.Forms.TextBox textBoxStrasse;
-        private System.Windows.Forms.CheckBox checkBoxLoginName;
         private System.Windows.Forms.Label labelOrt;
         private System.Windows.Forms.TextBox textBoxOrt;
         private System.Windows.Forms.Label labelPlz;
@@ -368,6 +360,7 @@
         private System.Windows.Forms.Label labelTelefon;
         private System.Windows.Forms.TextBox textBoxTelefon;
         private System.Windows.Forms.TextBox textBoxPlz;
+        private System.Windows.Forms.Label labelCheckLoginName;
     }
 }
 

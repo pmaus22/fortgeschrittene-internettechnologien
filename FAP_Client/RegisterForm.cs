@@ -35,16 +35,21 @@ namespace FAP_Client
 
         private async void textBoxLoginName_TextChanged(object sender, EventArgs e)
         {
-            var boolResponse = await Program.CheckLoginNameAsync(textBoxLoginName.Text);
-            if(boolResponse.ergebnis)
+            if (textBoxLoginName.Text.Length == 0)
             {
-                checkBoxLoginName.Checked = true;
-                checkBoxLoginName.Text = "Nutzername verfügbar";
+                labelCheckLoginName.Text = "";
             }
             else
             {
-                checkBoxLoginName.Checked = false;
-                checkBoxLoginName.Text = "Nutzername nicht verfügbar";
+                var boolResponse = await Program.CheckLoginNameAsync(textBoxLoginName.Text);
+                if (boolResponse.ergebnis)
+                {
+                    labelCheckLoginName.Text = "✅ Nutzername verfügbar";
+                }
+                else
+                {
+                    labelCheckLoginName.Text = "❌ Nutzername nicht verfügbar";
+                }
             }
         }
 
@@ -74,7 +79,7 @@ namespace FAP_Client
                 var addUserResponse = await Program.AddUserAsync(user);
                 if (addUserResponse.ergebnis)
                 {
-                    // TODO: Go To Anmeldeseite
+                    this.Dispose();
                 }
                 else
                 {
@@ -89,7 +94,7 @@ namespace FAP_Client
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            // TODO: Go To Anmeldeseite
+            this.Dispose();
         }
     }
 }

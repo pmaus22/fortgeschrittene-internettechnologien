@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FAP_Client.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,27 @@ namespace FAP_Client
         {
             RegisterForm registerForm = new RegisterForm();
             DialogResult dialogResult = registerForm.ShowDialog();
+        }
+
+        private async void buttonLogin_Click(object sender, EventArgs e)
+        {
+            var loginBody = new LoginBody
+            {
+                loginName = textBoxLoginName.Text,
+                passwort = new Passwort
+                {
+                    passwort = textBoxPasswort.Text
+                }
+            };
+            var loginResponse = await Program.LoginAsync(loginBody);
+            if (loginResponse.sessionID != null)
+            {
+                // TODO: Go To Hauptseite + sessionID merken
+            }
+            else
+            {
+                labelMessage.Text = "Fehler: Falsche Anmeldedaten";
+            }
         }
     }
 }
