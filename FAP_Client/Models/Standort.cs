@@ -2,7 +2,7 @@
 {
     public class Standort
     {
-        public int breitengrad { get; set; }
-        public int laengengrad { get; set; }
+        public double breitengrad { get; set; }
+        public double laengengrad { get; set; }
     }
 }

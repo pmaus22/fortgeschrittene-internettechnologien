@@ -31,5 +31,14 @@ namespace FAP_Client
             LoginForm login = new LoginForm();
             login.Show();
         }
+
+        private void buttonSetStandort_Click(object sender, EventArgs e)
+        {
+            // Open window to set location and pass user data
+            SetStandortForm.CurrentLoginName = CurrentLoginName;
+            SetStandortForm.CurrentSessionID = CurrentSessionID;
+            SetStandortForm setStandort = new SetStandortForm();
+            setStandort.Show();
+        }
     }
 }

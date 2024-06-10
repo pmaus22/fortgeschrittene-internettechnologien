@@ -1,0 +1,88 @@
+﻿using FAP_Client.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FAP_Client
+{
+    public partial class SetStandortForm : Form
+    {
+        // Variables to save login name and session ID of logged in user
+        public static string CurrentLoginName;
+        public static string CurrentSessionID;
+
+        public SetStandortForm()
+        {
+            InitializeComponent();
+            labelLoginName.Text = "Nutzername: " + CurrentLoginName;
+        }
+
+        private async void textBoxPlz_TextChanged(object sender, EventArgs e)
+        {
+            // Check if the entered text is a postal code
+            if (textBoxPlz.Text.Length == 5 && textBoxPlz.Text.All(char.IsDigit))
+            {
+                // Send request to server to get the corresponding place (using the geonames.org username)
+                var getOrtResponse = await Program.GetOrtAsync(textBoxPlz.Text, "pmaus22");
+
+                // Fill place name automatically when the server responds successfully
+                try
+                {
+                    textBoxOrt.Text = getOrtResponse.postalCodes[0].placeName;
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private async void buttonOk_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Send request to server to get latidude and longitude from entered address
+                var standort = await Program.GetStandortPerAdresseAsync(textBoxLand.Text, textBoxPlz.Text, textBoxOrt.Text, textBoxStrasse.Text);
+                
+                // Create new object with user data and location
+                var setStandortBody = new SetStandortBody
+                {
+                    loginName = CurrentLoginName,
+                    sitzung = CurrentSessionID,
+                    standort = standort
+                };
+
+                // Send request to server to set new user location using the obtained latitude and longitude values
+                var boolResponse = await Program.SetStandortAsync(setStandortBody);
+
+                // Close window when location was set sucessfully
+                if (boolResponse.ergebnis)
+                {
+                    this.Dispose();
+                }
+
+                // Show error message when server indicates failure
+                else
+                {
+                    labelMessage.Text = "Fehler: Standort konnte nicht gesetzt werden";
+                }
+            }
+            catch
+            {
+                // Show error message when server does not respond with latitude and longitude
+                labelMessage.Text = "Fehler: Falsche Adressangaben";
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            // Close window
+            this.Dispose();
+        }
+    }
+}
