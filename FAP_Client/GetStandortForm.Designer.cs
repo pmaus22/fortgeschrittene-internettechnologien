@@ -59,6 +59,8 @@
             // 
             // buttonLogout
             // 
+            this.buttonLogout.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogout.Location = new System.Drawing.Point(13, 957);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -66,7 +68,7 @@
             this.buttonLogout.Size = new System.Drawing.Size(201, 53);
             this.buttonLogout.TabIndex = 6;
             this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // mapControl
@@ -108,7 +110,8 @@
             // 
             // buttonGetUser
             // 
-            this.buttonGetUser.BackColor = System.Drawing.Color.Transparent;
+            this.buttonGetUser.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonGetUser.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonGetUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGetUser.Location = new System.Drawing.Point(628, 124);
             this.buttonGetUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -121,6 +124,8 @@
             // 
             // buttonZoom
             // 
+            this.buttonZoom.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonZoom.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonZoom.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonZoom.Location = new System.Drawing.Point(628, 237);
             this.buttonZoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -128,12 +133,13 @@
             this.buttonZoom.Size = new System.Drawing.Size(202, 53);
             this.buttonZoom.TabIndex = 4;
             this.buttonZoom.Text = "Zoom";
-            this.buttonZoom.UseVisualStyleBackColor = true;
+            this.buttonZoom.UseVisualStyleBackColor = false;
             this.buttonZoom.Click += new System.EventHandler(this.buttonZoom_Click);
             // 
             // buttonSetStandort
             // 
-            this.buttonSetStandort.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSetStandort.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSetStandort.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonSetStandort.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSetStandort.Location = new System.Drawing.Point(628, 15);
             this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);

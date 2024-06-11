@@ -49,7 +49,7 @@
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.Location = new System.Drawing.Point(12, 9);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(719, 48);
+            this.labelHeader.Size = new System.Drawing.Size(479, 32);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "Bitte geben Sie Ihren aktuellen Standort an.";
             // 
@@ -145,7 +145,8 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(227, 331);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -158,7 +159,8 @@
             // 
             // buttonOk
             // 
-            this.buttonOk.BackColor = System.Drawing.Color.Transparent;
+            this.buttonOk.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonOk.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOk.Location = new System.Drawing.Point(18, 331);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

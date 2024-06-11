@@ -53,7 +53,7 @@
             // 
             // buttonRegister
             // 
-            this.buttonRegister.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRegister.BackColor = System.Drawing.SystemColors.Control;
             this.buttonRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonRegister.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,7 +68,9 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonLogin.Location = new System.Drawing.Point(23, 332);

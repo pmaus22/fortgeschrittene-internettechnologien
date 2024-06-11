@@ -60,7 +60,8 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(232, 505);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -73,7 +74,8 @@
             // 
             // buttonOk
             // 
-            this.buttonOk.BackColor = System.Drawing.Color.Transparent;
+            this.buttonOk.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonOk.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOk.Location = new System.Drawing.Point(23, 505);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -334,7 +336,7 @@
             this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1071, 48);
+            this.label1.Size = new System.Drawing.Size(714, 32);
             this.label1.TabIndex = 58;
             this.label1.Text = "Bitte tragen Sie Ihre Zugangsdaten und Ihren Heimatstandort ein.";
             // 
