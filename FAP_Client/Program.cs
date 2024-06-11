@@ -61,7 +61,7 @@ namespace FAP_Client
         }
 
         // POST: FAPServer/service/fapservice/logout
-        static async Task<BoolResponse> LogoutAsync(LogoutBody logoutBody)
+        public static async Task<BoolResponse> LogoutAsync(LogoutBody logoutBody)
         {
             BoolResponse data = null;
             HttpResponseMessage response = await client.PostAsJsonAsync("logout", logoutBody);

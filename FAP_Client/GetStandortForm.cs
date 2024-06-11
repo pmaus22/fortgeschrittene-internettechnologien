@@ -37,7 +37,6 @@ namespace FAP_Client
             heatmapLayer.DataProvider = provider;
             mapControl1.Layers.Add(heatmapLayer);
 
-
             ChoroplethColorizer colorizer = new ChoroplethColorizer();
             colorizer.RangeStops.AddRange(new double[] { 0.1, 0.3, 0.5, 0.7, 1 });
             colorizer.ColorItems.Add(new ColorizerColorItem(Color.Green));
@@ -52,19 +51,19 @@ namespace FAP_Client
             grdUserIds.DataSource = SelectedUsers;
             adapter.DataSource = SelectedUsers;
         }
-        internal async void GetUser()
+
+        private async void buttonLogout_Click(object sender, EventArgs e)
         {
-            var curStandort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, txtBoxAddUserTrack.Text);
-            if (curStandort != null)
+            // Create object with current session ID of logged in user
+            var logoutBody = new LogoutBody
             {
-                SelectedUsers.Add(new StandortMapData { UserID = txtBoxAddUserTrack.Text, lat = curStandort.breitengrad, lon = curStandort.laengengrad });
-            }
-            grdUserIds.DataSource = SelectedUsers;
-            adapter.DataSource = SelectedUsers;
-            gridViewUserIDs.RefreshData();
-        }
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
+                loginName = CurrentLoginName,
+                sitzung = CurrentSessionID
+            };
+
+            // Send logout request to server
+            await Program.LogoutAsync(logoutBody);
+
             // Clear user data, close main app and open login window
             CurrentSessionID = null;
             CurrentLoginName = null;
@@ -82,12 +81,29 @@ namespace FAP_Client
             setStandort.Show();
         }
 
-        private void btnAddUserTrack_Click(object sender, EventArgs e)
+        private async void buttonGetUser_Click(object sender, EventArgs e)
         {
-            GetUser();
+            // Get location for the entered username
+            var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+
+            // Show error message if server responds with null or empty json object
+            if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
+            {
+                labelMessage.Text = "Der Nutzer existiert nicht oder hat keinen Standort angegeben.";
+            }
+
+            // Add user to grid and map
+            else
+            {
+                SelectedUsers.Add(new StandortMapData { UserID = textBoxUserId.Text, lat = standort.breitengrad, lon = standort.laengengrad });
+                grdUserIds.DataSource = SelectedUsers;
+                adapter.DataSource = SelectedUsers;
+                gridViewUserIDs.RefreshData();
+                adapter.Load();
+            }
         }
 
-        private void btnZoom_Click(object sender, EventArgs e)
+        private void buttonZoom_Click(object sender, EventArgs e)
         {
             var currDataRow = (string)gridViewUserIDs.GetFocusedRowCellValue(gridViewUserIDs.Columns["UserID"]);
             var currUser = SelectedUsers.FirstOrDefault(x => x.UserID == currDataRow);
