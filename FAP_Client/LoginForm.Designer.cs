@@ -48,7 +48,7 @@
             this.labelMessage.ForeColor = System.Drawing.Color.Red;
             this.labelMessage.Location = new System.Drawing.Point(231, 342);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(0, 48);
+            this.labelMessage.Size = new System.Drawing.Size(0, 32);
             this.labelMessage.TabIndex = 79;
             // 
             // buttonRegister
@@ -165,6 +165,7 @@
             this.Controls.Add(this.textBoxPasswort);
             this.Controls.Add(this.labelLoginName);
             this.Controls.Add(this.textBoxLoginName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "Anmeldung - FAP";
