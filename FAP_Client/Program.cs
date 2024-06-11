@@ -15,97 +15,109 @@ namespace FAP_Client
         // POST: FAPServer/service/fapservice/addUser
         public static async Task<AddUserResponse> AddUserAsync(User user)
         {
-            AddUserResponse ergebnis = null;
+            AddUserResponse data = null;
             HttpResponseMessage response = await client.PostAsJsonAsync("addUser", user);
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<AddUserResponse>();
+                data = await response.Content.ReadAsAsync<AddUserResponse>();
             }
-            return ergebnis;
+            return data;
         }
 
         // GET: FAPServer/service/fapservice/checkLoginName
         public static async Task<BoolResponse> CheckLoginNameAsync(string id)
         {
-            BoolResponse ergebnis = null;
+            BoolResponse data = null;
             HttpResponseMessage response = await client.GetAsync($"checkLoginName?id={id}");
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
+                data = await response.Content.ReadAsAsync<BoolResponse>();
             }
-            return ergebnis;
+            return data;
         }
 
         // GET: FAPServer/service/fapservice/getOrt
         public static async Task<GetOrtResponse> GetOrtAsync(string postalCode, string username)
         {
-            GetOrtResponse ergebnis = null;
+            GetOrtResponse data = null;
             HttpResponseMessage response = await client.GetAsync($"getOrt?postalcode={postalCode}&username={username}");
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<GetOrtResponse>();
+                data = await response.Content.ReadAsAsync<GetOrtResponse>();
             }
-            return ergebnis;
+            return data;
         }
 
         // POST: FAPServer/service/fapservice/login
         public static async Task<LoginResponse> LoginAsync(LoginBody loginBody)
         {
-            LoginResponse ergebnis = null;
+            LoginResponse data = null;
             HttpResponseMessage response = await client.PostAsJsonAsync("login", loginBody);
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<LoginResponse>();
+                data = await response.Content.ReadAsAsync<LoginResponse>();
             }
-            return ergebnis;
+            return data;
         }
 
         // POST: FAPServer/service/fapservice/logout
         static async Task<BoolResponse> LogoutAsync(LogoutBody logoutBody)
         {
-            BoolResponse ergebnis = null;
+            BoolResponse data = null;
             HttpResponseMessage response = await client.PostAsJsonAsync("logout", logoutBody);
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
+                data = await response.Content.ReadAsAsync<BoolResponse>();
             }
-            return ergebnis;
+            return data;
         }
 
         // PUT: FAPServer/service/fapservice/setStandort
         public static async Task<BoolResponse> SetStandortAsync(SetStandortBody setStandortBody)
         {
-            BoolResponse ergebnis = null;
+            BoolResponse data = null;
             HttpResponseMessage response = await client.PutAsJsonAsync("setStandort", setStandortBody);
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<BoolResponse>();
+                data = await response.Content.ReadAsAsync<BoolResponse>();
             }
-            return ergebnis;
+            return data;
         }
 
         // GET: FAPServer/service/fapservice/getStandort
         public static async Task<Standort> GetStandortAsync(string login, string session, string id)
         {
-            Standort ergebnis = null;
+            Standort data = null;
             HttpResponseMessage response = await client.GetAsync($"getStandort?login={login}&session={session}&id={id}");
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<Standort>();
+                data = await response.Content.ReadAsAsync<Standort>();
             }
-            return ergebnis;
+            return data;
         }
 
         // GET: FAPServer/service/fapservice/getBenutzer
         public static async Task<GetBenutzerResponse> GetBenutzerAsync(string login, string session)
         {
-            GetBenutzerResponse ergebnis = null;
+            GetBenutzerResponse data = null;
             HttpResponseMessage response = await client.GetAsync($"getBenutzer?login={login}&session={session}");
             if (response.IsSuccessStatusCode)
             {
-                ergebnis = await response.Content.ReadAsAsync<GetBenutzerResponse>();
+                data = await response.Content.ReadAsAsync<GetBenutzerResponse>();
             }
-            return ergebnis;
+            return data;
+        }
+
+        // GET: FAPServer/service/fapservice/getStandortPerAdresse
+        public static async Task<Standort> GetStandortPerAdresseAsync(string land, string plz, string ort, string strasse)
+        {
+            Standort data = null;
+            HttpResponseMessage response = await client.GetAsync($"getStandortPerAdresse?land={land}&plz={plz}&ort={ort}&strasse={strasse}");
+            if (response.IsSuccessStatusCode)
+            {
+                data = await response.Content.ReadAsAsync<Standort>();
+            }
+            return data;
         }
 
         /// The main entry point for the application.

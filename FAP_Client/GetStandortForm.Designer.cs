@@ -46,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).BeginInit();
+            this.buttonSetStandort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelLoginName
@@ -150,6 +151,17 @@
             this.btnZoom.UseVisualStyleBackColor = true;
             this.btnZoom.Click += new System.EventHandler(this.btnZoom_Click);
             // 
+            // buttonSetStandort
+            // 
+            this.buttonSetStandort.Location = new System.Drawing.Point(133, 401);
+            this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSetStandort.Name = "buttonSetStandort";
+            this.buttonSetStandort.Size = new System.Drawing.Size(143, 35);
+            this.buttonSetStandort.TabIndex = 13;
+            this.buttonSetStandort.Text = "Standort setzen";
+            this.buttonSetStandort.UseVisualStyleBackColor = true;
+            this.buttonSetStandort.Click += new System.EventHandler(this.buttonSetStandort_Click);
+            // 
             // GetStandortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -161,6 +173,8 @@
             this.Controls.Add(this.lblUserTrack);
             this.Controls.Add(this.txtBoxAddUserTrack);
             this.Controls.Add(this.mapControl1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSetStandort);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelLoginName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -192,5 +206,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn clmUserID;
         private DevExpress.XtraGrid.Columns.GridColumn UserID;
         private System.Windows.Forms.Button btnZoom;
+        private System.Windows.Forms.Button buttonSetStandort;
     }
 }
