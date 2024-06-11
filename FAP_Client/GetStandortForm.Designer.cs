@@ -54,16 +54,16 @@
             // 
             this.labelHeader.AutoSize = true;
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.Location = new System.Drawing.Point(12, 9);
+            this.labelHeader.Location = new System.Drawing.Point(12, 15);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(366, 48);
+            this.labelHeader.Size = new System.Drawing.Size(244, 32);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "Herzlich willkommen!";
             // 
             // buttonLogout
             // 
             this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(13, 1497);
+            this.buttonLogout.Location = new System.Drawing.Point(13, 957);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(201, 53);
@@ -77,10 +77,10 @@
             this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(50.5D, 10D);
             this.mapControl1.Layers.Add(this.imageLayer1);
             this.mapControl1.Layers.Add(this.imageLayer2);
-            this.mapControl1.Location = new System.Drawing.Point(851, 4);
+            this.mapControl1.Location = new System.Drawing.Point(838, 15);
             this.mapControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(1994, 1546);
+            this.mapControl1.Size = new System.Drawing.Size(1047, 995);
             this.mapControl1.TabIndex = 0;
             this.mapControl1.ZoomLevel = 5.8D;
             this.imageLayer1.DataProvider = this.wmsDataProvider1;
@@ -113,7 +113,7 @@
             // 
             this.buttonGetUser.BackColor = System.Drawing.Color.Transparent;
             this.buttonGetUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGetUser.Location = new System.Drawing.Point(630, 117);
+            this.buttonGetUser.Location = new System.Drawing.Point(628, 124);
             this.buttonGetUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonGetUser.Name = "buttonGetUser";
             this.buttonGetUser.Size = new System.Drawing.Size(201, 53);
@@ -124,13 +124,13 @@
             // 
             // grdUserIds
             // 
-            this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(21, 21, 21, 21);
             this.grdUserIds.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdUserIds.Location = new System.Drawing.Point(13, 297);
+            this.grdUserIds.Location = new System.Drawing.Point(13, 300);
             this.grdUserIds.MainView = this.gridViewUserIDs;
-            this.grdUserIds.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.grdUserIds.Margin = new System.Windows.Forms.Padding(21, 21, 21, 21);
             this.grdUserIds.Name = "grdUserIds";
-            this.grdUserIds.Size = new System.Drawing.Size(820, 1186);
+            this.grdUserIds.Size = new System.Drawing.Size(817, 643);
             this.grdUserIds.TabIndex = 16;
             this.grdUserIds.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUserIDs});
@@ -139,26 +139,26 @@
             // 
             this.gridViewUserIDs.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.UserID});
-            this.gridViewUserIDs.DetailHeight = 1180;
+            this.gridViewUserIDs.DetailHeight = 2655;
             this.gridViewUserIDs.GridControl = this.grdUserIds;
             this.gridViewUserIDs.Name = "gridViewUserIDs";
             this.gridViewUserIDs.OptionsBehavior.ReadOnly = true;
-            this.gridViewUserIDs.OptionsEditForm.PopupEditFormWidth = 2700;
+            this.gridViewUserIDs.OptionsEditForm.PopupEditFormWidth = 6075;
             // 
             // UserID
             // 
             this.UserID.Caption = "UserID";
             this.UserID.FieldName = "UserID";
-            this.UserID.MinWidth = 82;
+            this.UserID.MinWidth = 184;
             this.UserID.Name = "UserID";
             this.UserID.Visible = true;
             this.UserID.VisibleIndex = 0;
-            this.UserID.Width = 316;
+            this.UserID.Width = 711;
             // 
             // btnZoom
             // 
             this.btnZoom.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZoom.Location = new System.Drawing.Point(631, 231);
+            this.btnZoom.Location = new System.Drawing.Point(628, 237);
             this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnZoom.Name = "btnZoom";
             this.btnZoom.Size = new System.Drawing.Size(202, 53);
@@ -171,7 +171,7 @@
             // 
             this.buttonSetStandort.BackColor = System.Drawing.Color.Transparent;
             this.buttonSetStandort.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSetStandort.Location = new System.Drawing.Point(630, 4);
+            this.buttonSetStandort.Location = new System.Drawing.Point(628, 15);
             this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonSetStandort.Name = "buttonSetStandort";
             this.buttonSetStandort.Size = new System.Drawing.Size(201, 53);
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2858, 1564);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.btnZoom);
             this.Controls.Add(this.grdUserIds);
@@ -206,12 +206,12 @@
             this.Controls.Add(this.buttonSetStandort);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GetStandortForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Übersicht - FAP";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).EndInit();
