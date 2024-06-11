@@ -64,7 +64,7 @@
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(201, 53);
-            this.buttonLogout.TabIndex = 12;
+            this.buttonLogout.TabIndex = 6;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
@@ -78,7 +78,7 @@
             this.mapControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mapControl.Name = "mapControl";
             this.mapControl.Size = new System.Drawing.Size(1047, 995);
-            this.mapControl.TabIndex = 0;
+            this.mapControl.TabIndex = 5;
             this.mapControl.ZoomLevel = 5.8D;
             this.imageLayer1.DataProvider = this.wmsDataProvider1;
             this.imageLayer1.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
@@ -94,7 +94,7 @@
             this.textBoxUserId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxUserId.Name = "textBoxUserId";
             this.textBoxUserId.Size = new System.Drawing.Size(458, 39);
-            this.textBoxUserId.TabIndex = 13;
+            this.textBoxUserId.TabIndex = 1;
             // 
             // labelUserId
             // 
@@ -114,7 +114,7 @@
             this.buttonGetUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonGetUser.Name = "buttonGetUser";
             this.buttonGetUser.Size = new System.Drawing.Size(201, 53);
-            this.buttonGetUser.TabIndex = 15;
+            this.buttonGetUser.TabIndex = 2;
             this.buttonGetUser.Text = "Hinzufügen";
             this.buttonGetUser.UseVisualStyleBackColor = false;
             this.buttonGetUser.Click += new System.EventHandler(this.buttonGetUser_Click);
@@ -126,7 +126,7 @@
             this.buttonZoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonZoom.Name = "buttonZoom";
             this.buttonZoom.Size = new System.Drawing.Size(202, 53);
-            this.buttonZoom.TabIndex = 17;
+            this.buttonZoom.TabIndex = 4;
             this.buttonZoom.Text = "Zoom";
             this.buttonZoom.UseVisualStyleBackColor = true;
             this.buttonZoom.Click += new System.EventHandler(this.buttonZoom_Click);
@@ -139,7 +139,7 @@
             this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonSetStandort.Name = "buttonSetStandort";
             this.buttonSetStandort.Size = new System.Drawing.Size(201, 53);
-            this.buttonSetStandort.TabIndex = 13;
+            this.buttonSetStandort.TabIndex = 0;
             this.buttonSetStandort.Text = "Standort setzen";
             this.buttonSetStandort.UseVisualStyleBackColor = false;
             this.buttonSetStandort.Click += new System.EventHandler(this.buttonSetStandort_Click);
@@ -162,7 +162,7 @@
             this.listBoxUserList.Location = new System.Drawing.Point(15, 305);
             this.listBoxUserList.Name = "listBoxUserList";
             this.listBoxUserList.Size = new System.Drawing.Size(816, 644);
-            this.listBoxUserList.TabIndex = 19;
+            this.listBoxUserList.TabIndex = 3;
             // 
             // labelMessageZoom
             // 
@@ -196,6 +196,7 @@
             this.Name = "GetStandortForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Übersicht - FAP";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GetStandortForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.mapControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

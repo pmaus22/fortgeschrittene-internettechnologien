@@ -149,5 +149,11 @@ namespace FAP_Client
                 labelMessageZoom.Text = "⚠️ Es ist kein Nutzer zum heranzoomen ausgewählt";
             }
         }
+
+        private void GetStandortForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Exit app when main window is closed
+            Application.Exit();
+        }
     }
 }

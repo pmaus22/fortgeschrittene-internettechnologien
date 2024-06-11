@@ -49,5 +49,11 @@ namespace FAP_Client
                 labelMessage.Text = "⚠️ Falsche Anmeldedaten";
             }
         }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Exit app when login window is closed
+            Application.Exit();
+        }
     }
 }
