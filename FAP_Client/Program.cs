@@ -1,7 +1,5 @@
 ﻿using FAP_Client.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -87,7 +85,7 @@ namespace FAP_Client
         }
 
         // GET: FAPServer/service/fapservice/getStandort
-        static async Task<Standort> GetStandortAsync(string login, string session, string id)
+        public static async Task<Standort> GetStandortAsync(string login, string session, string id)
         {
             Standort ergebnis = null;
             HttpResponseMessage response = await client.GetAsync($"getStandort?login={login}&session={session}&id={id}");

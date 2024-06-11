@@ -6,12 +6,12 @@ using System.Drawing;
 
 namespace FAP_Client
 {
-    public partial class StandortKarte : DevExpress.XtraEditors.XtraForm
+    internal partial class StandortKarte : DevExpress.XtraEditors.XtraForm
     {
         HeatmapDataSourceAdapter adapter;
         HeatmapProvider provider;
         private List<StandortMapData> MainDataSource = new List<StandortMapData>();
-        public StandortKarte(List<StandortMapData> piStandorte)
+        private StandortKarte(List<StandortMapData> piStandorte)
         {
             InitializeComponent();
 
