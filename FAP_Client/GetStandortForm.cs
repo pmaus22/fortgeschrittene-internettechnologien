@@ -102,6 +102,8 @@ namespace FAP_Client
                 adapter.DataSource = SelectedUsers;
                 gridViewUserIDs.RefreshData();
                 adapter.Load();
+
+                labelMessage.ResetText();
             }
         }
 
