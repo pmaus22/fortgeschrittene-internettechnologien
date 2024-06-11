@@ -43,10 +43,10 @@
             this.gridViewUserIDs = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.UserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnZoom = new System.Windows.Forms.Button();
+            this.buttonSetStandort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).BeginInit();
-            this.buttonSetStandort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelLoginName
@@ -166,14 +166,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1803, 773);
+            this.ClientSize = new System.Drawing.Size(979, 525);
             this.Controls.Add(this.btnZoom);
             this.Controls.Add(this.grdUserIds);
             this.Controls.Add(this.btnAddUserTrack);
             this.Controls.Add(this.lblUserTrack);
             this.Controls.Add(this.txtBoxAddUserTrack);
             this.Controls.Add(this.mapControl1);
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonSetStandort);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelLoginName);

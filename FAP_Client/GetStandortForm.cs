@@ -65,6 +65,9 @@ namespace FAP_Client
             {
                 SelectedUsers.Add(new StandortMapData { UserID = txtBoxAddUserTrack.Text, lat = curStandort.breitengrad, lon = curStandort.laengengrad });
             }
+            grdUserIds.DataSource = SelectedUsers;
+            adapter.DataSource = SelectedUsers;
+            gridViewUserIDs.RefreshData();
         }
         private void buttonLogout_Click(object sender, EventArgs e)
         {
