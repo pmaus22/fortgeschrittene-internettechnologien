@@ -70,7 +70,7 @@
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.Transparent;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonLogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonLogin.Location = new System.Drawing.Point(23, 332);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogin.Name = "buttonLogin";
