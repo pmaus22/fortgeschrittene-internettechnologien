@@ -46,7 +46,7 @@ namespace FAP_Client
             // Show error message when login fails
             else
             {
-                labelMessage.Text = "Fehler: Falsche Anmeldedaten";
+                labelMessage.Text = "⚠️ Falsche Anmeldedaten";
             }
         }
     }
