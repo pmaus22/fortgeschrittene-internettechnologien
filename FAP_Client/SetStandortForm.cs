@@ -44,11 +44,11 @@ namespace FAP_Client
 
         private async void buttonOk_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Send request to server to get latidude and longitude from entered address
-                var standort = await Program.GetStandortPerAdresseAsync(textBoxLand.Text, textBoxPlz.Text, textBoxOrt.Text, textBoxStrasse.Text);
+            // Send request to server to get latidude and longitude from entered address
+            var standort = await Program.GetStandortPerAdresseAsync(textBoxLand.Text, textBoxPlz.Text, textBoxOrt.Text, textBoxStrasse.Text);
                 
+            if (standort != null)
+            {
                 // Create new object with user data and location
                 var setStandortBody = new SetStandortBody
                 {
@@ -72,7 +72,7 @@ namespace FAP_Client
                     labelMessage.Text = "Fehler: Standort konnte nicht gesetzt werden";
                 }
             }
-            catch
+            else
             {
                 // Show error message when server does not respond with latitude and longitude
                 labelMessage.Text = "Fehler: Falsche Adressangaben";
