@@ -118,11 +118,11 @@
             // grdUserIds
             // 
             this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grdUserIds.Location = new System.Drawing.Point(33, 171);
+            this.grdUserIds.Location = new System.Drawing.Point(18, 85);
             this.grdUserIds.MainView = this.gridViewUserIDs;
             this.grdUserIds.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grdUserIds.Name = "grdUserIds";
-            this.grdUserIds.Size = new System.Drawing.Size(1632, 1461);
+            this.grdUserIds.Size = new System.Drawing.Size(822, 1461);
             this.grdUserIds.TabIndex = 16;
             this.grdUserIds.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUserIDs});
