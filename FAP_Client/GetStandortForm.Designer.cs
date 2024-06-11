@@ -52,18 +52,18 @@
             // labelLoginName
             // 
             this.labelLoginName.AutoSize = true;
-            this.labelLoginName.Location = new System.Drawing.Point(11, 7);
+            this.labelLoginName.Location = new System.Drawing.Point(12, 9);
             this.labelLoginName.Name = "labelLoginName";
-            this.labelLoginName.Size = new System.Drawing.Size(104, 16);
+            this.labelLoginName.Size = new System.Drawing.Size(123, 20);
             this.labelLoginName.TabIndex = 0;
             this.labelLoginName.Text = "Angemeldet als:";
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(15, 730);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogout.Location = new System.Drawing.Point(17, 912);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(100, 28);
+            this.buttonLogout.Size = new System.Drawing.Size(112, 35);
             this.buttonLogout.TabIndex = 12;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -74,10 +74,10 @@
             this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(50.5D, 10D);
             this.mapControl1.Layers.Add(this.imageLayer1);
             this.mapControl1.Layers.Add(this.imageLayer2);
-            this.mapControl1.Location = new System.Drawing.Point(747, -5);
-            this.mapControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.mapControl1.Location = new System.Drawing.Point(840, -6);
+            this.mapControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(1056, 730);
+            this.mapControl1.Size = new System.Drawing.Size(1188, 912);
             this.mapControl1.TabIndex = 0;
             this.mapControl1.ZoomLevel = 5.8D;
             this.imageLayer1.DataProvider = this.wmsDataProvider1;
@@ -89,25 +89,27 @@
             // 
             // txtBoxAddUserTrack
             // 
-            this.txtBoxAddUserTrack.Location = new System.Drawing.Point(121, 37);
+            this.txtBoxAddUserTrack.Location = new System.Drawing.Point(136, 46);
+            this.txtBoxAddUserTrack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxAddUserTrack.Name = "txtBoxAddUserTrack";
-            this.txtBoxAddUserTrack.Size = new System.Drawing.Size(403, 22);
+            this.txtBoxAddUserTrack.Size = new System.Drawing.Size(453, 26);
             this.txtBoxAddUserTrack.TabIndex = 13;
             // 
             // lblUserTrack
             // 
             this.lblUserTrack.AutoSize = true;
-            this.lblUserTrack.Location = new System.Drawing.Point(12, 40);
+            this.lblUserTrack.Location = new System.Drawing.Point(14, 50);
             this.lblUserTrack.Name = "lblUserTrack";
-            this.lblUserTrack.Size = new System.Drawing.Size(74, 16);
+            this.lblUserTrack.Size = new System.Drawing.Size(86, 20);
             this.lblUserTrack.TabIndex = 14;
             this.lblUserTrack.Text = "User Track";
             // 
             // btnAddUserTrack
             // 
-            this.btnAddUserTrack.Location = new System.Drawing.Point(530, 37);
+            this.btnAddUserTrack.Location = new System.Drawing.Point(596, 46);
+            this.btnAddUserTrack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddUserTrack.Name = "btnAddUserTrack";
-            this.btnAddUserTrack.Size = new System.Drawing.Size(75, 23);
+            this.btnAddUserTrack.Size = new System.Drawing.Size(84, 29);
             this.btnAddUserTrack.TabIndex = 15;
             this.btnAddUserTrack.Text = "Track";
             this.btnAddUserTrack.UseVisualStyleBackColor = true;
@@ -115,10 +117,12 @@
             // 
             // grdUserIds
             // 
-            this.grdUserIds.Location = new System.Drawing.Point(15, 76);
+            this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grdUserIds.Location = new System.Drawing.Point(18, 85);
             this.grdUserIds.MainView = this.gridViewUserIDs;
+            this.grdUserIds.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grdUserIds.Name = "grdUserIds";
-            this.grdUserIds.Size = new System.Drawing.Size(725, 649);
+            this.grdUserIds.Size = new System.Drawing.Size(822, 1461);
             this.grdUserIds.TabIndex = 16;
             this.grdUserIds.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUserIDs});
@@ -127,25 +131,28 @@
             // 
             this.gridViewUserIDs.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.UserID});
+            this.gridViewUserIDs.DetailHeight = 787;
             this.gridViewUserIDs.GridControl = this.grdUserIds;
             this.gridViewUserIDs.Name = "gridViewUserIDs";
             this.gridViewUserIDs.OptionsBehavior.ReadOnly = true;
+            this.gridViewUserIDs.OptionsEditForm.PopupEditFormWidth = 1800;
             // 
             // UserID
             // 
             this.UserID.Caption = "UserID";
             this.UserID.FieldName = "UserID";
-            this.UserID.MinWidth = 25;
+            this.UserID.MinWidth = 55;
             this.UserID.Name = "UserID";
             this.UserID.Visible = true;
             this.UserID.VisibleIndex = 0;
-            this.UserID.Width = 94;
+            this.UserID.Width = 211;
             // 
             // btnZoom
             // 
-            this.btnZoom.Location = new System.Drawing.Point(665, 37);
+            this.btnZoom.Location = new System.Drawing.Point(748, 46);
+            this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnZoom.Name = "btnZoom";
-            this.btnZoom.Size = new System.Drawing.Size(75, 23);
+            this.btnZoom.Size = new System.Drawing.Size(84, 29);
             this.btnZoom.TabIndex = 17;
             this.btnZoom.Text = "Zoom";
             this.btnZoom.UseVisualStyleBackColor = true;
@@ -153,10 +160,10 @@
             // 
             // buttonSetStandort
             // 
-            this.buttonSetStandort.Location = new System.Drawing.Point(133, 401);
-            this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSetStandort.Location = new System.Drawing.Point(687, 9);
+            this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonSetStandort.Name = "buttonSetStandort";
-            this.buttonSetStandort.Size = new System.Drawing.Size(143, 35);
+            this.buttonSetStandort.Size = new System.Drawing.Size(145, 29);
             this.buttonSetStandort.TabIndex = 13;
             this.buttonSetStandort.Text = "Standort setzen";
             this.buttonSetStandort.UseVisualStyleBackColor = true;
@@ -164,7 +171,7 @@
             // 
             // GetStandortForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 525);
             this.Controls.Add(this.btnZoom);
