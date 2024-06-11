@@ -48,13 +48,7 @@ namespace FAP_Client
             colorizer.ApproximateColors = true;
 
             provider.Colorizer = colorizer;
-            // Werte noch löschen sind nur für den Test da
-            SelectedUsers.Add(new StandortMapData { UserID = "Peter", lat = 51.8384, lon = 6.6151 });
-            SelectedUsers.Add(new StandortMapData { UserID = "Hans", lat = 52.8384, lon = 7.6151 });
-            SelectedUsers.Add(new StandortMapData { UserID = "Jürgen", lat = 54.8384, lon = 6.1151 });
-            SelectedUsers.Add(new StandortMapData { UserID = "Veselin", lat = 51.8233, lon = 6.7151 });
-            SelectedUsers.Add(new StandortMapData { UserID = "mark", lat = 51.8555, lon = 9.9151 });
-            SelectedUsers.Add(new StandortMapData { UserID = "mausiP", lat = 56.3343, lon = 6.6151 });
+
             grdUserIds.DataSource = SelectedUsers;
             adapter.DataSource = SelectedUsers;
         }
