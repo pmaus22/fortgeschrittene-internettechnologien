@@ -39,15 +39,12 @@
             this.textBoxUserId = new System.Windows.Forms.TextBox();
             this.labelUserId = new System.Windows.Forms.Label();
             this.buttonGetUser = new System.Windows.Forms.Button();
-            this.grdUserIds = new DevExpress.XtraGrid.GridControl();
-            this.gridViewUserIDs = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.UserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.buttonZoom = new System.Windows.Forms.Button();
             this.buttonSetStandort = new System.Windows.Forms.Button();
-            this.labelMessage = new System.Windows.Forms.Label();
+            this.labelMessageGetUser = new System.Windows.Forms.Label();
+            this.listBoxUserList = new System.Windows.Forms.ListBox();
+            this.labelMessageZoom = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).BeginInit();
             this.SuspendLayout();
             // 
             // labelHeader
@@ -72,14 +69,14 @@
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // mapControl1
+            // mapControl
             // 
             this.mapControl.CenterPoint = new DevExpress.XtraMap.GeoPoint(50.5D, 10D);
             this.mapControl.Layers.Add(this.imageLayer1);
             this.mapControl.Layers.Add(this.imageLayer2);
             this.mapControl.Location = new System.Drawing.Point(838, 15);
             this.mapControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.mapControl.Name = "mapControl1";
+            this.mapControl.Name = "mapControl";
             this.mapControl.Size = new System.Drawing.Size(1047, 995);
             this.mapControl.TabIndex = 0;
             this.mapControl.ZoomLevel = 5.8D;
@@ -122,39 +119,6 @@
             this.buttonGetUser.UseVisualStyleBackColor = false;
             this.buttonGetUser.Click += new System.EventHandler(this.buttonGetUser_Click);
             // 
-            // grdUserIds
-            // 
-            this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
-            this.grdUserIds.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdUserIds.Location = new System.Drawing.Point(13, 300);
-            this.grdUserIds.MainView = this.gridViewUserIDs;
-            this.grdUserIds.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
-            this.grdUserIds.Name = "grdUserIds";
-            this.grdUserIds.Size = new System.Drawing.Size(816, 643);
-            this.grdUserIds.TabIndex = 16;
-            this.grdUserIds.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewUserIDs});
-            // 
-            // gridViewUserIDs
-            // 
-            this.gridViewUserIDs.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.UserID});
-            this.gridViewUserIDs.DetailHeight = 5973;
-            this.gridViewUserIDs.GridControl = this.grdUserIds;
-            this.gridViewUserIDs.Name = "gridViewUserIDs";
-            this.gridViewUserIDs.OptionsBehavior.ReadOnly = true;
-            this.gridViewUserIDs.OptionsEditForm.PopupEditFormWidth = 13668;
-            // 
-            // UserID
-            // 
-            this.UserID.Caption = "UserID";
-            this.UserID.FieldName = "UserID";
-            this.UserID.MinWidth = 414;
-            this.UserID.Name = "UserID";
-            this.UserID.Visible = true;
-            this.UserID.VisibleIndex = 0;
-            this.UserID.Width = 1599;
-            // 
             // buttonZoom
             // 
             this.buttonZoom.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,24 +144,45 @@
             this.buttonSetStandort.UseVisualStyleBackColor = false;
             this.buttonSetStandort.Click += new System.EventHandler(this.buttonSetStandort_Click);
             // 
-            // labelMessage
+            // labelMessageGetUser
             // 
-            this.labelMessage.AutoSize = true;
-            this.labelMessage.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelMessage.Location = new System.Drawing.Point(12, 181);
-            this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(0, 48);
-            this.labelMessage.TabIndex = 18;
+            this.labelMessageGetUser.AutoSize = true;
+            this.labelMessageGetUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessageGetUser.ForeColor = System.Drawing.Color.Red;
+            this.labelMessageGetUser.Location = new System.Drawing.Point(12, 181);
+            this.labelMessageGetUser.Name = "labelMessageGetUser";
+            this.labelMessageGetUser.Size = new System.Drawing.Size(0, 32);
+            this.labelMessageGetUser.TabIndex = 18;
+            // 
+            // listBoxUserList
+            // 
+            this.listBoxUserList.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxUserList.FormattingEnabled = true;
+            this.listBoxUserList.ItemHeight = 32;
+            this.listBoxUserList.Location = new System.Drawing.Point(15, 305);
+            this.listBoxUserList.Name = "listBoxUserList";
+            this.listBoxUserList.Size = new System.Drawing.Size(816, 644);
+            this.listBoxUserList.TabIndex = 19;
+            // 
+            // labelMessageZoom
+            // 
+            this.labelMessageZoom.AutoSize = true;
+            this.labelMessageZoom.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessageZoom.ForeColor = System.Drawing.Color.Red;
+            this.labelMessageZoom.Location = new System.Drawing.Point(12, 247);
+            this.labelMessageZoom.Name = "labelMessageZoom";
+            this.labelMessageZoom.Size = new System.Drawing.Size(0, 32);
+            this.labelMessageZoom.TabIndex = 20;
             // 
             // GetStandortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
-            this.Controls.Add(this.labelMessage);
+            this.Controls.Add(this.labelMessageZoom);
+            this.Controls.Add(this.listBoxUserList);
+            this.Controls.Add(this.labelMessageGetUser);
             this.Controls.Add(this.buttonZoom);
-            this.Controls.Add(this.grdUserIds);
             this.Controls.Add(this.buttonGetUser);
             this.Controls.Add(this.labelUserId);
             this.Controls.Add(this.textBoxUserId);
@@ -212,8 +197,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Übersicht - FAP";
             ((System.ComponentModel.ISupportInitialize)(this.mapControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,12 +214,11 @@
         private System.Windows.Forms.TextBox textBoxUserId;
         private System.Windows.Forms.Label labelUserId;
         private System.Windows.Forms.Button buttonGetUser;
-        private DevExpress.XtraGrid.GridControl grdUserIds;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewUserIDs;
         private DevExpress.XtraGrid.Columns.GridColumn clmUserID;
-        private DevExpress.XtraGrid.Columns.GridColumn UserID;
         private System.Windows.Forms.Button buttonZoom;
         private System.Windows.Forms.Button buttonSetStandort;
-        private System.Windows.Forms.Label labelMessage;
+        private System.Windows.Forms.Label labelMessageGetUser;
+        private System.Windows.Forms.ListBox listBoxUserList;
+        private System.Windows.Forms.Label labelMessageZoom;
     }
 }

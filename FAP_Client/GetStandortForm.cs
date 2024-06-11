@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.ComponentModel;
+using DevExpress.Utils.Extensions;
 
 namespace FAP_Client
 {
@@ -16,18 +18,18 @@ namespace FAP_Client
         HeatmapDataSourceAdapter adapter;
         HeatmapProvider provider;
 
-
-        private List<StandortMapData> SelectedUsers = new List<StandortMapData>();
+        // BindingLists for user list and heatmap
+        private BindingList<string> UserList = new BindingList<string>();
+        private BindingList<Standort> LocationList = new BindingList<Standort>();
 
         public GetStandortForm()
         {
             InitializeComponent();
             labelHeader.Text = "Herzlich willkommen, " + CurrentLoginName + "!";
 
-
             adapter = new HeatmapDataSourceAdapter();
-            adapter.Mappings.XCoordinate = "lon"; //lon
-            adapter.Mappings.YCoordinate = "lat"; //lat
+            adapter.Mappings.XCoordinate = "laengengrad";
+            adapter.Mappings.YCoordinate = "breitengrad";
 
             provider = new HeatmapProvider();
             provider.PointSource = adapter;
@@ -48,8 +50,11 @@ namespace FAP_Client
 
             provider.Colorizer = colorizer;
 
-            grdUserIds.DataSource = SelectedUsers;
-            adapter.DataSource = SelectedUsers;
+            // Use BindingLists as data sources for user list and heatmap to automatically refresh visuals when an item is added
+            listBoxUserList.DataSource = UserList;
+            adapter.DataSource = LocationList;
+
+            //TODO: auto refresh locations
         }
 
         private async void buttonLogout_Click(object sender, EventArgs e)
@@ -79,41 +84,62 @@ namespace FAP_Client
             SetStandortForm.CurrentSessionID = CurrentSessionID;
             SetStandortForm setStandort = new SetStandortForm();
             setStandort.Show();
+            // TODO: refresh location
         }
 
         private async void buttonGetUser_Click(object sender, EventArgs e)
         {
-            // TODO: Dont allow double entry
-            // TODO: Auto refresh location of every user in the list
-            // Get location for the entered username
-            var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+            //TODO: vorname und nachname zeigen
 
-            // Show error message if server responds with null or empty json object
-            if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
+            // Check if UserId is already in the list
+            if (!UserList.Contains(textBoxUserId.Text))
             {
-                labelMessage.Text = "⚠️ Der Nutzer existiert nicht oder hat keinen Standort angegeben";
+                // Get location for the entered username
+                var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+
+                // Show error message if server responds with null or empty json object
+                if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
+                {
+                    labelMessageGetUser.Text = "⚠️ Der Nutzer existiert nicht oder hat keinen Standort angegeben";
+                }
+
+                // Add user to list and map, clear error message
+                else
+                {
+                    UserList.Add(textBoxUserId.Text);
+                    LocationList.Add(standort);
+                    labelMessageGetUser.ResetText();
+                }
             }
 
-            // Add user to grid and map
+            // Show error message when UserId is already in the list
             else
             {
-                SelectedUsers.Add(new StandortMapData { UserID = textBoxUserId.Text, lat = standort.breitengrad, lon = standort.laengengrad });
-                grdUserIds.DataSource = SelectedUsers;
-                adapter.DataSource = SelectedUsers;
-                gridViewUserIDs.RefreshData();
-                adapter.Load();
-
-                labelMessage.ResetText();
+                labelMessageGetUser.Text = "⚠️ Der Nutzer steht bereits in der Liste";
             }
         }
 
         private void buttonZoom_Click(object sender, EventArgs e)
         {
-            // TODO: Error handling when no user is selected
-            var currDataRow = (string)gridViewUserIDs.GetFocusedRowCellValue(gridViewUserIDs.Columns["UserID"]);
-            var currUser = SelectedUsers.FirstOrDefault(x => x.UserID == currDataRow);
-            mapControl.CenterPoint = new DevExpress.XtraMap.GeoPoint(currUser.lat, currUser.lon);
-            mapControl.ZoomLevel = 15.2D;
+            // Check if list is empty
+            if (UserList.Count != 0)
+            {
+                // Get index of selected user
+                var selectedIndex = listBoxUserList.SelectedIndex;
+
+                // Use index of selected user to find the corresponding location on the map
+                mapControl.CenterPoint = new DevExpress.XtraMap.GeoPoint(LocationList[selectedIndex].breitengrad, LocationList[selectedIndex].laengengrad);
+                mapControl.ZoomLevel = 15.2D;
+
+                // Clear error message
+                labelMessageZoom.ResetText();
+            }
+
+            // Show error message
+            else
+            {
+                labelMessageZoom.Text = "⚠️ Es ist kein Nutzer zum heranzoomen ausgewählt";
+            }
         }
     }
 }
