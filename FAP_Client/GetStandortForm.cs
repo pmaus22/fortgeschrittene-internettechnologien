@@ -35,7 +35,7 @@ namespace FAP_Client
 
             ImageLayer heatmapLayer = new ImageLayer();
             heatmapLayer.DataProvider = provider;
-            mapControl1.Layers.Add(heatmapLayer);
+            mapControl.Layers.Add(heatmapLayer);
 
             ChoroplethColorizer colorizer = new ChoroplethColorizer();
             colorizer.RangeStops.AddRange(new double[] { 0.1, 0.3, 0.5, 0.7, 1 });
@@ -83,6 +83,8 @@ namespace FAP_Client
 
         private async void buttonGetUser_Click(object sender, EventArgs e)
         {
+            // TODO: Dont allow double entry
+            // TODO: Auto refresh location of every user in the list
             // Get location for the entered username
             var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
 
@@ -105,10 +107,11 @@ namespace FAP_Client
 
         private void buttonZoom_Click(object sender, EventArgs e)
         {
+            // TODO: Error handling when no user is selected
             var currDataRow = (string)gridViewUserIDs.GetFocusedRowCellValue(gridViewUserIDs.Columns["UserID"]);
             var currUser = SelectedUsers.FirstOrDefault(x => x.UserID == currDataRow);
-            mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(currUser.lat, currUser.lon);
-            mapControl1.ZoomLevel = 15.2D;
+            mapControl.CenterPoint = new DevExpress.XtraMap.GeoPoint(currUser.lat, currUser.lon);
+            mapControl.ZoomLevel = 15.2D;
         }
     }
 }

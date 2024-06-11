@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetStandortForm));
             this.labelHeader = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.mapControl1 = new DevExpress.XtraMap.MapControl();
+            this.mapControl = new DevExpress.XtraMap.MapControl();
             this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
             this.wmsDataProvider1 = new DevExpress.XtraMap.WmsDataProvider();
             this.imageLayer2 = new DevExpress.XtraMap.ImageLayer();
@@ -45,7 +45,7 @@
             this.buttonZoom = new System.Windows.Forms.Button();
             this.buttonSetStandort = new System.Windows.Forms.Button();
             this.labelMessage = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mapControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).BeginInit();
             this.SuspendLayout();
@@ -74,15 +74,15 @@
             // 
             // mapControl1
             // 
-            this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(50.5D, 10D);
-            this.mapControl1.Layers.Add(this.imageLayer1);
-            this.mapControl1.Layers.Add(this.imageLayer2);
-            this.mapControl1.Location = new System.Drawing.Point(838, 15);
-            this.mapControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(1047, 995);
-            this.mapControl1.TabIndex = 0;
-            this.mapControl1.ZoomLevel = 5.8D;
+            this.mapControl.CenterPoint = new DevExpress.XtraMap.GeoPoint(50.5D, 10D);
+            this.mapControl.Layers.Add(this.imageLayer1);
+            this.mapControl.Layers.Add(this.imageLayer2);
+            this.mapControl.Location = new System.Drawing.Point(838, 15);
+            this.mapControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mapControl.Name = "mapControl1";
+            this.mapControl.Size = new System.Drawing.Size(1047, 995);
+            this.mapControl.TabIndex = 0;
+            this.mapControl.ZoomLevel = 5.8D;
             this.imageLayer1.DataProvider = this.wmsDataProvider1;
             this.imageLayer1.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
             this.imageLayer1.Name = "WmsMap";
@@ -201,7 +201,7 @@
             this.Controls.Add(this.buttonGetUser);
             this.Controls.Add(this.labelUserId);
             this.Controls.Add(this.textBoxUserId);
-            this.Controls.Add(this.mapControl1);
+            this.Controls.Add(this.mapControl);
             this.Controls.Add(this.buttonSetStandort);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.labelHeader);
@@ -211,7 +211,7 @@
             this.Name = "GetStandortForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Übersicht - FAP";
-            ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mapControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).EndInit();
             this.ResumeLayout(false);
@@ -223,7 +223,7 @@
 
         private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.Button buttonLogout;
-        private DevExpress.XtraMap.MapControl mapControl1;
+        private DevExpress.XtraMap.MapControl mapControl;
         private DevExpress.XtraMap.ImageLayer imageLayer1;
         private DevExpress.XtraMap.WmsDataProvider wmsDataProvider1;
         private DevExpress.XtraMap.ImageLayer imageLayer2;
