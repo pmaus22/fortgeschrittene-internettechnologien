@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetStandortForm));
-            this.labelLoginName = new System.Windows.Forms.Label();
+            this.labelHeader = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.mapControl1 = new DevExpress.XtraMap.MapControl();
             this.imageLayer1 = new DevExpress.XtraMap.ImageLayer();
@@ -37,33 +37,36 @@
             this.imageLayer2 = new DevExpress.XtraMap.ImageLayer();
             this.heatmapProvider1 = new DevExpress.XtraMap.HeatmapProvider();
             this.txtBoxAddUserTrack = new System.Windows.Forms.TextBox();
-            this.lblUserTrack = new System.Windows.Forms.Label();
-            this.btnAddUserTrack = new System.Windows.Forms.Button();
+            this.labelUserId = new System.Windows.Forms.Label();
+            this.buttonGetUser = new System.Windows.Forms.Button();
             this.grdUserIds = new DevExpress.XtraGrid.GridControl();
             this.gridViewUserIDs = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.UserID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnZoom = new System.Windows.Forms.Button();
             this.buttonSetStandort = new System.Windows.Forms.Button();
+            this.labelMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelLoginName
+            // labelHeader
             // 
-            this.labelLoginName.AutoSize = true;
-            this.labelLoginName.Location = new System.Drawing.Point(12, 9);
-            this.labelLoginName.Name = "labelLoginName";
-            this.labelLoginName.Size = new System.Drawing.Size(123, 20);
-            this.labelLoginName.TabIndex = 0;
-            this.labelLoginName.Text = "Angemeldet als:";
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Location = new System.Drawing.Point(12, 9);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(366, 48);
+            this.labelHeader.TabIndex = 0;
+            this.labelHeader.Text = "Herzlich willkommen!";
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(17, 912);
+            this.buttonLogout.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.Location = new System.Drawing.Point(13, 1497);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(112, 35);
+            this.buttonLogout.Size = new System.Drawing.Size(201, 53);
             this.buttonLogout.TabIndex = 12;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -74,10 +77,10 @@
             this.mapControl1.CenterPoint = new DevExpress.XtraMap.GeoPoint(50.5D, 10D);
             this.mapControl1.Layers.Add(this.imageLayer1);
             this.mapControl1.Layers.Add(this.imageLayer2);
-            this.mapControl1.Location = new System.Drawing.Point(840, -6);
+            this.mapControl1.Location = new System.Drawing.Point(851, 4);
             this.mapControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mapControl1.Name = "mapControl1";
-            this.mapControl1.Size = new System.Drawing.Size(1188, 912);
+            this.mapControl1.Size = new System.Drawing.Size(1994, 1546);
             this.mapControl1.TabIndex = 0;
             this.mapControl1.ZoomLevel = 5.8D;
             this.imageLayer1.DataProvider = this.wmsDataProvider1;
@@ -89,40 +92,45 @@
             // 
             // txtBoxAddUserTrack
             // 
-            this.txtBoxAddUserTrack.Location = new System.Drawing.Point(136, 46);
+            this.txtBoxAddUserTrack.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxAddUserTrack.Location = new System.Drawing.Point(164, 124);
             this.txtBoxAddUserTrack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBoxAddUserTrack.Name = "txtBoxAddUserTrack";
-            this.txtBoxAddUserTrack.Size = new System.Drawing.Size(453, 26);
+            this.txtBoxAddUserTrack.Size = new System.Drawing.Size(377, 39);
             this.txtBoxAddUserTrack.TabIndex = 13;
             // 
-            // lblUserTrack
+            // labelUserId
             // 
-            this.lblUserTrack.AutoSize = true;
-            this.lblUserTrack.Location = new System.Drawing.Point(14, 50);
-            this.lblUserTrack.Name = "lblUserTrack";
-            this.lblUserTrack.Size = new System.Drawing.Size(86, 20);
-            this.lblUserTrack.TabIndex = 14;
-            this.lblUserTrack.Text = "User Track";
+            this.labelUserId.AutoSize = true;
+            this.labelUserId.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserId.Location = new System.Drawing.Point(12, 127);
+            this.labelUserId.Name = "labelUserId";
+            this.labelUserId.Size = new System.Drawing.Size(146, 32);
+            this.labelUserId.TabIndex = 14;
+            this.labelUserId.Text = "Nutzername";
             // 
-            // btnAddUserTrack
+            // buttonGetUser
             // 
-            this.btnAddUserTrack.Location = new System.Drawing.Point(596, 46);
-            this.btnAddUserTrack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAddUserTrack.Name = "btnAddUserTrack";
-            this.btnAddUserTrack.Size = new System.Drawing.Size(84, 29);
-            this.btnAddUserTrack.TabIndex = 15;
-            this.btnAddUserTrack.Text = "Track";
-            this.btnAddUserTrack.UseVisualStyleBackColor = true;
-            this.btnAddUserTrack.Click += new System.EventHandler(this.btnAddUserTrack_Click);
+            this.buttonGetUser.BackColor = System.Drawing.Color.Transparent;
+            this.buttonGetUser.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGetUser.Location = new System.Drawing.Point(630, 117);
+            this.buttonGetUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonGetUser.Name = "buttonGetUser";
+            this.buttonGetUser.Size = new System.Drawing.Size(201, 53);
+            this.buttonGetUser.TabIndex = 15;
+            this.buttonGetUser.Text = "Hinzufügen";
+            this.buttonGetUser.UseVisualStyleBackColor = false;
+            this.buttonGetUser.Click += new System.EventHandler(this.btnAddUserTrack_Click);
             // 
             // grdUserIds
             // 
-            this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.grdUserIds.Location = new System.Drawing.Point(18, 85);
+            this.grdUserIds.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.grdUserIds.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdUserIds.Location = new System.Drawing.Point(13, 297);
             this.grdUserIds.MainView = this.gridViewUserIDs;
-            this.grdUserIds.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grdUserIds.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.grdUserIds.Name = "grdUserIds";
-            this.grdUserIds.Size = new System.Drawing.Size(822, 1461);
+            this.grdUserIds.Size = new System.Drawing.Size(820, 1186);
             this.grdUserIds.TabIndex = 16;
             this.grdUserIds.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUserIDs});
@@ -131,28 +139,29 @@
             // 
             this.gridViewUserIDs.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.UserID});
-            this.gridViewUserIDs.DetailHeight = 787;
+            this.gridViewUserIDs.DetailHeight = 1180;
             this.gridViewUserIDs.GridControl = this.grdUserIds;
             this.gridViewUserIDs.Name = "gridViewUserIDs";
             this.gridViewUserIDs.OptionsBehavior.ReadOnly = true;
-            this.gridViewUserIDs.OptionsEditForm.PopupEditFormWidth = 1800;
+            this.gridViewUserIDs.OptionsEditForm.PopupEditFormWidth = 2700;
             // 
             // UserID
             // 
             this.UserID.Caption = "UserID";
             this.UserID.FieldName = "UserID";
-            this.UserID.MinWidth = 55;
+            this.UserID.MinWidth = 82;
             this.UserID.Name = "UserID";
             this.UserID.Visible = true;
             this.UserID.VisibleIndex = 0;
-            this.UserID.Width = 211;
+            this.UserID.Width = 316;
             // 
             // btnZoom
             // 
-            this.btnZoom.Location = new System.Drawing.Point(748, 46);
+            this.btnZoom.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZoom.Location = new System.Drawing.Point(631, 231);
             this.btnZoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnZoom.Name = "btnZoom";
-            this.btnZoom.Size = new System.Drawing.Size(84, 29);
+            this.btnZoom.Size = new System.Drawing.Size(202, 53);
             this.btnZoom.TabIndex = 17;
             this.btnZoom.Text = "Zoom";
             this.btnZoom.UseVisualStyleBackColor = true;
@@ -160,33 +169,49 @@
             // 
             // buttonSetStandort
             // 
-            this.buttonSetStandort.Location = new System.Drawing.Point(687, 9);
+            this.buttonSetStandort.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSetStandort.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSetStandort.Location = new System.Drawing.Point(630, 4);
             this.buttonSetStandort.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonSetStandort.Name = "buttonSetStandort";
-            this.buttonSetStandort.Size = new System.Drawing.Size(145, 29);
+            this.buttonSetStandort.Size = new System.Drawing.Size(201, 53);
             this.buttonSetStandort.TabIndex = 13;
             this.buttonSetStandort.Text = "Standort setzen";
-            this.buttonSetStandort.UseVisualStyleBackColor = true;
+            this.buttonSetStandort.UseVisualStyleBackColor = false;
             this.buttonSetStandort.Click += new System.EventHandler(this.buttonSetStandort_Click);
+            // 
+            // labelMessage
+            // 
+            this.labelMessage.AutoSize = true;
+            this.labelMessage.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessage.ForeColor = System.Drawing.Color.Red;
+            this.labelMessage.Location = new System.Drawing.Point(12, 181);
+            this.labelMessage.Name = "labelMessage";
+            this.labelMessage.Size = new System.Drawing.Size(146, 32);
+            this.labelMessage.TabIndex = 18;
+            this.labelMessage.Text = "Nutzername";
             // 
             // GetStandortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 525);
+            this.ClientSize = new System.Drawing.Size(2858, 1564);
+            this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.btnZoom);
             this.Controls.Add(this.grdUserIds);
-            this.Controls.Add(this.btnAddUserTrack);
-            this.Controls.Add(this.lblUserTrack);
+            this.Controls.Add(this.buttonGetUser);
+            this.Controls.Add(this.labelUserId);
             this.Controls.Add(this.txtBoxAddUserTrack);
             this.Controls.Add(this.mapControl1);
             this.Controls.Add(this.buttonSetStandort);
             this.Controls.Add(this.buttonLogout);
-            this.Controls.Add(this.labelLoginName);
+            this.Controls.Add(this.labelHeader);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GetStandortForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Übersicht - FAP";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.mapControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdUserIds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserIDs)).EndInit();
@@ -197,7 +222,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelLoginName;
+        private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.Button buttonLogout;
         private DevExpress.XtraMap.MapControl mapControl1;
         private DevExpress.XtraMap.ImageLayer imageLayer1;
@@ -205,13 +230,14 @@
         private DevExpress.XtraMap.ImageLayer imageLayer2;
         private DevExpress.XtraMap.HeatmapProvider heatmapProvider1;
         private System.Windows.Forms.TextBox txtBoxAddUserTrack;
-        private System.Windows.Forms.Label lblUserTrack;
-        private System.Windows.Forms.Button btnAddUserTrack;
+        private System.Windows.Forms.Label labelUserId;
+        private System.Windows.Forms.Button buttonGetUser;
         private DevExpress.XtraGrid.GridControl grdUserIds;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewUserIDs;
         private DevExpress.XtraGrid.Columns.GridColumn clmUserID;
         private DevExpress.XtraGrid.Columns.GridColumn UserID;
         private System.Windows.Forms.Button btnZoom;
         private System.Windows.Forms.Button buttonSetStandort;
+        private System.Windows.Forms.Label labelMessage;
     }
 }

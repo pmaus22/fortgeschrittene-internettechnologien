@@ -22,7 +22,7 @@ namespace FAP_Client
         public GetStandortForm()
         {
             InitializeComponent();
-            labelLoginName.Text = "Angemeldet als: " + CurrentLoginName;
+            labelHeader.Text = "Herzlich willkommen, " + CurrentLoginName + "!";
 
 
             adapter = new HeatmapDataSourceAdapter();
