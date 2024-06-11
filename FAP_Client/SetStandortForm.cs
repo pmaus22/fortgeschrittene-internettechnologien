@@ -20,7 +20,7 @@ namespace FAP_Client
         public SetStandortForm()
         {
             InitializeComponent();
-            labelLoginName.Text = "Nutzername: " + CurrentLoginName;
+            labelHeader.Text = "Bitte geben Sie Ihren aktuellen Standort an, " + CurrentLoginName + ".";
         }
 
         private async void textBoxPlz_TextChanged(object sender, EventArgs e)
@@ -69,13 +69,13 @@ namespace FAP_Client
                 // Show error message when server indicates failure
                 else
                 {
-                    labelMessage.Text = "Fehler: Standort konnte nicht gesetzt werden";
+                    labelMessage.Text = "⚠️ Standort konnte nicht gesetzt werden";
                 }
             }
             else
             {
                 // Show error message when server does not respond with latitude and longitude
-                labelMessage.Text = "Fehler: Falsche Adressangaben";
+                labelMessage.Text = "⚠️ Falsche Adressangaben";
             }
         }
 

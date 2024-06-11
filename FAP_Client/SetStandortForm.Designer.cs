@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelLoginName = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetStandortForm));
+            this.labelHeader = new System.Windows.Forms.Label();
             this.textBoxPlz = new System.Windows.Forms.TextBox();
             this.labelLand = new System.Windows.Forms.Label();
             this.textBoxLand = new System.Windows.Forms.TextBox();
@@ -42,15 +43,15 @@
             this.buttonOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelLoginName
+            // labelHeader
             // 
-            this.labelLoginName.AutoSize = true;
-            this.labelLoginName.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoginName.Location = new System.Drawing.Point(12, 9);
-            this.labelLoginName.Name = "labelLoginName";
-            this.labelLoginName.Size = new System.Drawing.Size(151, 32);
-            this.labelLoginName.TabIndex = 0;
-            this.labelLoginName.Text = "Nutzername:";
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Location = new System.Drawing.Point(12, 9);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(719, 48);
+            this.labelHeader.TabIndex = 0;
+            this.labelHeader.Text = "Bitte geben Sie Ihren aktuellen Standort an.";
             // 
             // textBoxPlz
             // 
@@ -184,9 +185,11 @@
             this.Controls.Add(this.labelOrt);
             this.Controls.Add(this.textBoxOrt);
             this.Controls.Add(this.labelPlz);
-            this.Controls.Add(this.labelLoginName);
+            this.Controls.Add(this.labelHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SetStandortForm";
-            this.Text = "SetStandortForm";
+            this.Text = "Standort setzen - FAP";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +197,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelLoginName;
+        private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.TextBox textBoxPlz;
         private System.Windows.Forms.Label labelLand;
         private System.Windows.Forms.TextBox textBoxLand;
