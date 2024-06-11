@@ -60,9 +60,10 @@ namespace FAP_Client
                 // Send request to server to set new user location using the obtained latitude and longitude values
                 var boolResponse = await Program.SetStandortAsync(setStandortBody);
 
-                // Close window when location was set sucessfully
+                // Refresh location list and close window when location was set sucessfully
                 if (boolResponse.ergebnis)
                 {
+                    GetStandortForm.RefreshLocationList();
                     this.Dispose();
                 }
 

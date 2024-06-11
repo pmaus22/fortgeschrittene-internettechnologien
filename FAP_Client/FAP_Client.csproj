@@ -107,7 +107,6 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\StandortMapData.cs" />
     <Compile Include="AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,12 +137,6 @@
     <Compile Include="SetStandortForm.Designer.cs">
       <DependentUpon>SetStandortForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StandortKarte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StandortKarte.Designer.cs">
-      <DependentUpon>StandortKarte.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -163,9 +156,6 @@
     </Compile>
     <EmbeddedResource Include="SetStandortForm.resx">
       <DependentUpon>SetStandortForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StandortKarte.resx">
-      <DependentUpon>StandortKarte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

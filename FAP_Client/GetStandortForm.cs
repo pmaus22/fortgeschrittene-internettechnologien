@@ -1,12 +1,9 @@
 ﻿using DevExpress.XtraMap;
 using FAP_Client.Models;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using System.ComponentModel;
-using DevExpress.Utils.Extensions;
 
 namespace FAP_Client
 {
@@ -15,12 +12,14 @@ namespace FAP_Client
         // Variables to save login name and session ID of logged in user
         public static string CurrentLoginName;
         public static string CurrentSessionID;
-        HeatmapDataSourceAdapter adapter;
-        HeatmapProvider provider;
+
+        // Objects for map visuals
+        private readonly HeatmapDataSourceAdapter adapter;
+        private readonly HeatmapProvider provider;
 
         // BindingLists for user list and heatmap
-        private BindingList<string> UserList = new BindingList<string>();
-        private BindingList<Standort> LocationList = new BindingList<Standort>();
+        private static readonly BindingList<string> UserList = new BindingList<string>();
+        private static readonly BindingList<Standort> LocationList = new BindingList<Standort>();
 
         public GetStandortForm()
         {
@@ -57,6 +56,16 @@ namespace FAP_Client
             //TODO: auto refresh locations
         }
 
+        public async static void RefreshLocationList()
+        {
+            // Get location for every user in the list
+            for (int i = 0; i < UserList.Count; i++)
+            {
+                var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, UserList[i]);
+                LocationList[i] = standort;
+            }
+        }
+
         private async void buttonLogout_Click(object sender, EventArgs e)
         {
             // Create object with current session ID of logged in user
@@ -84,7 +93,6 @@ namespace FAP_Client
             SetStandortForm.CurrentSessionID = CurrentSessionID;
             SetStandortForm setStandort = new SetStandortForm();
             setStandort.Show();
-            // TODO: refresh location
         }
 
         private async void buttonGetUser_Click(object sender, EventArgs e)
