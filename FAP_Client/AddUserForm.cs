@@ -54,12 +54,14 @@ namespace FAP_Client
                 // Say that login name is available
                 if (boolResponse.ergebnis)
                 {
+                    labelCheckLoginName.ForeColor = Color.Green;
                     labelCheckLoginName.Text = "✅ Nutzername verfügbar";
                 }
 
                 // Say that login name is unavailable
                 else
                 {
+                    labelCheckLoginName.ForeColor = Color.Red;
                     labelCheckLoginName.Text = "❌ Nutzername nicht verfügbar";
                 }
             }
@@ -103,14 +105,14 @@ namespace FAP_Client
                 // Show error message from the server response
                 else
                 {
-                    labelMessage.Text = "Fehler: " + addUserResponse.meldung.ToString();
+                    labelMessage.Text = "⚠️ " + addUserResponse.meldung.ToString();
                 }
             }
 
             // Show error message when password was entered incorrectly
             else
             {
-                labelMessage.Text = "Fehler: Passwörter stimmen nicht überein";
+                labelMessage.Text = "⚠️ Passwörter stimmen nicht überein";
             }
         }
 
