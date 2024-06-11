@@ -91,7 +91,7 @@ namespace FAP_Client
             // Show error message if server responds with null or empty json object
             if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
             {
-                labelMessage.Text = "Der Nutzer existiert nicht oder hat keinen Standort angegeben.";
+                labelMessage.Text = "⚠️ Der Nutzer existiert nicht oder hat keinen Standort angegeben";
             }
 
             // Add user to grid and map
