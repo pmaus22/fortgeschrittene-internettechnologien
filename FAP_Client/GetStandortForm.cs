@@ -4,8 +4,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace FAP_Client
 {
@@ -28,18 +26,22 @@ namespace FAP_Client
             InitializeComponent();
             labelHeader.Text = "Herzlich willkommen, " + CurrentLoginName + "!";
 
+            // Adapter object to map attributes of location object to
             adapter = new HeatmapDataSourceAdapter();
             adapter.Mappings.XCoordinate = "laengengrad";
             adapter.Mappings.YCoordinate = "breitengrad";
 
+            // Heatmap provider
             provider = new HeatmapProvider();
             provider.PointSource = adapter;
             provider.Algorithm = new HeatmapDensityBasedAlgorithm { PointRadius = 6 };
 
+            // Heatmap layer
             ImageLayer heatmapLayer = new ImageLayer();
             heatmapLayer.DataProvider = provider;
             mapControl.Layers.Add(heatmapLayer);
 
+            // Define heatmap colors
             ChoroplethColorizer colorizer = new ChoroplethColorizer();
             colorizer.RangeStops.AddRange(new double[] { 0.1, 0.3, 0.5, 0.7, 1 });
             colorizer.ColorItems.Add(new ColorizerColorItem(Color.Green));
@@ -48,7 +50,6 @@ namespace FAP_Client
             colorizer.ColorItems.Add(new ColorizerColorItem(Color.Orange));
             colorizer.ColorItems.Add(new ColorizerColorItem(Color.Red));
             colorizer.ApproximateColors = true;
-
             provider.Colorizer = colorizer;
 
             // Use BindingLists as data sources for user list and heatmap to automatically refresh visuals when an item is added

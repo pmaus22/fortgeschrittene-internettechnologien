@@ -45,18 +45,17 @@
             // 
             // labelHeader
             // 
-            this.labelHeader.AutoSize = true;
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeader.Location = new System.Drawing.Point(12, 9);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(479, 32);
+            this.labelHeader.Size = new System.Drawing.Size(479, 75);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "Bitte geben Sie Ihren aktuellen Standort an.";
             // 
             // textBoxPlz
             // 
             this.textBoxPlz.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlz.Location = new System.Drawing.Point(100, 87);
+            this.textBoxPlz.Location = new System.Drawing.Point(100, 134);
             this.textBoxPlz.Name = "textBoxPlz";
             this.textBoxPlz.Size = new System.Drawing.Size(222, 39);
             this.textBoxPlz.TabIndex = 47;
@@ -66,7 +65,7 @@
             // 
             this.labelLand.AutoSize = true;
             this.labelLand.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLand.Location = new System.Drawing.Point(11, 235);
+            this.labelLand.Location = new System.Drawing.Point(11, 282);
             this.labelLand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLand.Name = "labelLand";
             this.labelLand.Size = new System.Drawing.Size(65, 32);
@@ -76,7 +75,7 @@
             // textBoxLand
             // 
             this.textBoxLand.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLand.Location = new System.Drawing.Point(100, 232);
+            this.textBoxLand.Location = new System.Drawing.Point(100, 279);
             this.textBoxLand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLand.Name = "textBoxLand";
             this.textBoxLand.Size = new System.Drawing.Size(222, 39);
@@ -86,7 +85,7 @@
             // 
             this.labelStrasse.AutoSize = true;
             this.labelStrasse.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStrasse.Location = new System.Drawing.Point(12, 186);
+            this.labelStrasse.Location = new System.Drawing.Point(12, 233);
             this.labelStrasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStrasse.Name = "labelStrasse";
             this.labelStrasse.Size = new System.Drawing.Size(80, 32);
@@ -96,7 +95,7 @@
             // textBoxStrasse
             // 
             this.textBoxStrasse.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStrasse.Location = new System.Drawing.Point(100, 183);
+            this.textBoxStrasse.Location = new System.Drawing.Point(100, 230);
             this.textBoxStrasse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxStrasse.Name = "textBoxStrasse";
             this.textBoxStrasse.Size = new System.Drawing.Size(222, 39);
@@ -106,7 +105,7 @@
             // 
             this.labelOrt.AutoSize = true;
             this.labelOrt.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrt.Location = new System.Drawing.Point(12, 137);
+            this.labelOrt.Location = new System.Drawing.Point(12, 184);
             this.labelOrt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelOrt.Name = "labelOrt";
             this.labelOrt.Size = new System.Drawing.Size(48, 32);
@@ -116,7 +115,7 @@
             // textBoxOrt
             // 
             this.textBoxOrt.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxOrt.Location = new System.Drawing.Point(100, 134);
+            this.textBoxOrt.Location = new System.Drawing.Point(100, 181);
             this.textBoxOrt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxOrt.Name = "textBoxOrt";
             this.textBoxOrt.Size = new System.Drawing.Size(222, 39);
@@ -126,7 +125,7 @@
             // 
             this.labelPlz.AutoSize = true;
             this.labelPlz.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlz.Location = new System.Drawing.Point(12, 90);
+            this.labelPlz.Location = new System.Drawing.Point(12, 137);
             this.labelPlz.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPlz.Name = "labelPlz";
             this.labelPlz.Size = new System.Drawing.Size(53, 32);
@@ -138,7 +137,7 @@
             this.labelMessage.AutoSize = true;
             this.labelMessage.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelMessage.Location = new System.Drawing.Point(12, 389);
+            this.labelMessage.Location = new System.Drawing.Point(16, 441);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Size = new System.Drawing.Size(0, 32);
             this.labelMessage.TabIndex = 83;
@@ -148,7 +147,7 @@
             this.buttonCancel.BackColor = System.Drawing.SystemColors.Control;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(227, 331);
+            this.buttonCancel.Location = new System.Drawing.Point(250, 381);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(201, 53);
@@ -162,7 +161,7 @@
             this.buttonOk.BackColor = System.Drawing.SystemColors.Control;
             this.buttonOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonOk.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOk.Location = new System.Drawing.Point(18, 331);
+            this.buttonOk.Location = new System.Drawing.Point(41, 381);
             this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(201, 53);
@@ -175,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 441);
+            this.ClientSize = new System.Drawing.Size(500, 507);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
