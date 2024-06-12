@@ -4,6 +4,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace FAP_Client
 {
@@ -17,8 +19,11 @@ namespace FAP_Client
         private readonly HeatmapDataSourceAdapter adapter;
         private readonly HeatmapProvider provider;
 
-        // BindingLists for user list and heatmap
-        private static readonly BindingList<string> UserList = new BindingList<string>();
+        // List to store user data for logical operations
+        private static readonly List<UserListEntry> UserList = new List<UserListEntry>();
+
+        // BindingLists for user list box and heatmap
+        private readonly BindingList<string> UserListDisplayItems = new BindingList<string>();
         private static readonly BindingList<Standort> LocationList = new BindingList<Standort>();
 
         public GetStandortForm()
@@ -53,7 +58,7 @@ namespace FAP_Client
             provider.Colorizer = colorizer;
 
             // Use BindingLists as data sources for user list and heatmap to automatically refresh visuals when an item is added
-            listBoxUserList.DataSource = UserList;
+            listBoxUserList.DataSource = UserListDisplayItems;
             adapter.DataSource = LocationList;
         }
 
@@ -62,7 +67,7 @@ namespace FAP_Client
             // Get location for every user in the list
             for (int i = 0; i < UserList.Count; i++)
             {
-                var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, UserList[i]);
+                var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, UserList[i].loginName);
                 LocationList[i] = standort;
             }
         }
@@ -81,23 +86,37 @@ namespace FAP_Client
             //TODO: vorname und nachname zeigen
 
             // Check if UserId is already in the list
-            if (!UserList.Contains(textBoxUserId.Text))
+            if (!UserList.Any(u => u.loginName == textBoxUserId.Text))
             {
-                // Get location for the entered username
-                var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+                // Send request to server to get user data
+                var user = await Program.GetBenutzerAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
 
-                // Show error message if server responds with null or empty json object
-                if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
+                // Get location
+                if (user != null)
                 {
-                    labelMessageGetUser.Text = "⚠️ Der Nutzer existiert nicht oder hat keinen Standort angegeben";
+                    // Get location for the entered username
+                    var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+
+                    // Show error message if server responds with null or empty json object
+                    if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
+                    {
+                        labelMessageGetUser.Text = "⚠️ Der Nutzer hat keinen Standort angegeben";
+                    }
+
+                    // Add user to list and map, clear error message
+                    else
+                    {
+                        UserList.Add(user);
+                        UserListDisplayItems.Add($"{user.loginName} - {user.vorname} {user.nachname}");
+                        LocationList.Add(standort);
+                        labelMessageGetUser.ResetText();
+                    }
                 }
 
-                // Add user to list and map, clear error message
+                // Show error message when user does not exist
                 else
                 {
-                    UserList.Add(textBoxUserId.Text);
-                    LocationList.Add(standort);
-                    labelMessageGetUser.ResetText();
+                    labelMessageGetUser.Text = "⚠️ Der Nutzer existiert nicht";
                 }
             }
 
@@ -118,6 +137,7 @@ namespace FAP_Client
 
                 // Remove selected user from list and location from map
                 UserList.RemoveAt(selectedIndex);
+                UserListDisplayItems.RemoveAt(selectedIndex);
                 LocationList.RemoveAt(selectedIndex);
 
                 // Clear error message

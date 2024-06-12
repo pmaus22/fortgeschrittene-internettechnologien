@@ -1,9 +1,11 @@
 ﻿using FAP_Client.Models;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace FAP_Client
 {
@@ -87,37 +89,39 @@ namespace FAP_Client
         // GET: FAPServer/service/fapservice/getStandort
         public static async Task<Standort> GetStandortAsync(string login, string session, string id)
         {
-            Standort data = null;
+            Standort standort = null;
             HttpResponseMessage response = await client.GetAsync($"getStandort?login={login}&session={session}&id={id}");
             if (response.IsSuccessStatusCode)
             {
-                data = await response.Content.ReadAsAsync<Standort>();
+                standort = await response.Content.ReadAsAsync<Standort>();
             }
-            return data;
+            return standort;
         }
 
         // GET: FAPServer/service/fapservice/getBenutzer
-        public static async Task<GetBenutzerResponse> GetBenutzerAsync(string login, string session)
+        public static async Task<UserListEntry> GetBenutzerAsync(string login, string session, string id)
         {
-            GetBenutzerResponse data = null;
-            HttpResponseMessage response = await client.GetAsync($"getBenutzer?login={login}&session={session}");
-            if (response.IsSuccessStatusCode)
+            // Filter single user from user list
+            UserListEntry user = null;
+            var response = await client.GetStringAsync($"getBenutzer?login={login}&session={session}");
+            if (response != null)
             {
-                data = await response.Content.ReadAsAsync<GetBenutzerResponse>();
+                var userList = JsonConvert.DeserializeObject<GetBenutzerResponse>(response);
+                user = userList.benutzerliste.FirstOrDefault(u => u.loginName == id);
             }
-            return data;
+            return user;
         }
 
         // GET: FAPServer/service/fapservice/getStandortPerAdresse
         public static async Task<Standort> GetStandortPerAdresseAsync(string land, string plz, string ort, string strasse)
         {
-            Standort data = null;
+            Standort standort = null;
             HttpResponseMessage response = await client.GetAsync($"getStandortPerAdresse?land={land}&plz={plz}&ort={ort}&strasse={strasse}");
             if (response.IsSuccessStatusCode)
             {
-                data = await response.Content.ReadAsAsync<Standort>();
+                standort = await response.Content.ReadAsAsync<Standort>();
             }
-            return data;
+            return standort;
         }
 
         /// The main entry point for the application.
