@@ -45,6 +45,7 @@
             this.listBoxUserList = new System.Windows.Forms.ListBox();
             this.labelMessageZoom = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(201, 53);
-            this.buttonLogout.TabIndex = 6;
+            this.buttonLogout.TabIndex = 7;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
@@ -81,7 +82,7 @@
             this.mapControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mapControl.Name = "mapControl";
             this.mapControl.Size = new System.Drawing.Size(1047, 995);
-            this.mapControl.TabIndex = 5;
+            this.mapControl.TabIndex = 6;
             this.mapControl.ZoomLevel = 5.8D;
             this.imageLayer1.DataProvider = this.wmsDataProvider1;
             this.imageLayer1.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
@@ -169,7 +170,7 @@
             this.listBoxUserList.Location = new System.Drawing.Point(15, 305);
             this.listBoxUserList.Name = "listBoxUserList";
             this.listBoxUserList.Size = new System.Drawing.Size(816, 644);
-            this.listBoxUserList.TabIndex = 3;
+            this.listBoxUserList.TabIndex = 5;
             // 
             // labelMessageZoom
             // 
@@ -190,16 +191,31 @@
             this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(202, 53);
-            this.buttonRefresh.TabIndex = 21;
+            this.buttonRefresh.TabIndex = 8;
             this.buttonRefresh.Text = "Aktualisieren";
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRemove.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemove.Location = new System.Drawing.Point(420, 237);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(202, 53);
+            this.buttonRemove.TabIndex = 3;
+            this.buttonRemove.Text = "Entfernen";
+            this.buttonRemove.UseVisualStyleBackColor = false;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // GetStandortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelMessageZoom);
             this.Controls.Add(this.listBoxUserList);
@@ -244,5 +260,6 @@
         private System.Windows.Forms.ListBox listBoxUserList;
         private System.Windows.Forms.Label labelMessageZoom;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonRemove;
     }
 }

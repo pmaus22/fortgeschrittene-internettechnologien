@@ -54,8 +54,6 @@ namespace FAP_Client
             // Use BindingLists as data sources for user list and heatmap to automatically refresh visuals when an item is added
             listBoxUserList.DataSource = UserList;
             adapter.DataSource = LocationList;
-
-            // TODO: delete item from userlist feature
         }
 
         public async static void RefreshLocationList()
@@ -66,26 +64,6 @@ namespace FAP_Client
                 var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, UserList[i]);
                 LocationList[i] = standort;
             }
-        }
-
-        private async void buttonLogout_Click(object sender, EventArgs e)
-        {
-            // Create object with current session ID of logged in user
-            var logoutBody = new LogoutBody
-            {
-                loginName = CurrentLoginName,
-                sitzung = CurrentSessionID
-            };
-
-            // Send logout request to server
-            await Program.LogoutAsync(logoutBody);
-
-            // Clear user data, close main app and open login window
-            CurrentSessionID = null;
-            CurrentLoginName = null;
-            this.Dispose();
-            LoginForm login = new LoginForm();
-            login.Show();
         }
 
         private void buttonSetStandort_Click(object sender, EventArgs e)
@@ -129,6 +107,30 @@ namespace FAP_Client
             }
         }
 
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            // Check if list is empty
+            if (UserList.Count != 0)
+            {
+                // Get index of selected user
+                var selectedIndex = listBoxUserList.SelectedIndex;
+
+                // Remove selected user from list and location from map
+                UserList.RemoveAt(selectedIndex);
+                LocationList.RemoveAt(selectedIndex);
+
+                // Clear error message
+                labelMessageZoom.ResetText();
+            }
+
+            // Show error message
+            else
+            {
+                labelMessageZoom.Text = "⚠️ Es ist kein Nutzer ausgewählt";
+            }
+
+        }
+
         private void buttonZoom_Click(object sender, EventArgs e)
         {
             // Check if list is empty
@@ -148,20 +150,40 @@ namespace FAP_Client
             // Show error message
             else
             {
-                labelMessageZoom.Text = "⚠️ Es ist kein Nutzer zum heranzoomen ausgewählt";
+                labelMessageZoom.Text = "⚠️ Es ist kein Nutzer ausgewählt";
             }
+        }
+        private async void buttonLogout_Click(object sender, EventArgs e)
+        {
+            // Create object with current session ID of logged in user
+            var logoutBody = new LogoutBody
+            {
+                loginName = CurrentLoginName,
+                sitzung = CurrentSessionID
+            };
+
+            // Send logout request to server
+            await Program.LogoutAsync(logoutBody);
+
+            // Clear user data, close main app and open login window
+            CurrentSessionID = null;
+            CurrentLoginName = null;
+            this.Dispose();
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
+
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            // Refresh Locations on button click event
+            RefreshLocationList();
         }
 
         private void GetStandortForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Exit app when main window is closed
             Application.Exit();
-        }
-
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            // Refresh Locations on button click event
-            RefreshLocationList();
         }
     }
 }
