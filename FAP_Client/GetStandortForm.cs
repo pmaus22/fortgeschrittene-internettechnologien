@@ -83,8 +83,6 @@ namespace FAP_Client
 
         private async void buttonGetUser_Click(object sender, EventArgs e)
         {
-            //TODO: vorname und nachname zeigen
-
             // Check if UserId is already in the list
             if (!UserList.Any(u => u.loginName == textBoxUserId.Text))
             {
