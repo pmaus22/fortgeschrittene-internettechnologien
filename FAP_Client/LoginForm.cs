@@ -15,7 +15,7 @@ namespace FAP_Client
         {
             // Open registration window
             AddUserForm addUser = new AddUserForm();
-            DialogResult dialogResult = addUser.ShowDialog();
+            addUser.Show();
         }
 
         private async void buttonLogin_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace FAP_Client
                 GetStandortForm.CurrentSessionID = loginResponse.sessionID;
                 this.Hide();
                 GetStandortForm getStandort = new GetStandortForm();
-                getStandort.ShowDialog();
+                getStandort.Show();
             }
 
             // Show error message when login fails

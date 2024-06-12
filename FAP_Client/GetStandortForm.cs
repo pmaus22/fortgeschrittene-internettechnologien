@@ -54,7 +54,6 @@ namespace FAP_Client
             adapter.DataSource = LocationList;
 
             //TODO: auto refresh locations
-            //TODO: überall nur form.show benutzen
             // TODO: delete item from userlist feature
         }
 
