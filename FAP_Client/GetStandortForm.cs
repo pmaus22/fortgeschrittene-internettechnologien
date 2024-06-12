@@ -91,14 +91,14 @@ namespace FAP_Client
                 // Send request to server to get user data
                 var user = await Program.GetBenutzerAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
 
-                // Get location
+                // Get location if user exists
                 if (user != null)
                 {
                     // Get location for the entered username
                     var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
 
-                    // Show error message if server responds with null or empty json object
-                    if (standort == null || (standort.breitengrad == 0 && standort.laengengrad == 0))
+                    // Show error message if server responds with null
+                    if (standort == null)
                     {
                         labelMessageGetUser.Text = "⚠️ Der Nutzer hat keinen Standort angegeben";
                     }
