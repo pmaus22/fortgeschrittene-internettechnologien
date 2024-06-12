@@ -99,15 +99,15 @@ namespace FAP_Client
         }
 
         // GET: FAPServer/service/fapservice/getBenutzer
-        public static async Task<UserListEntry> GetBenutzerAsync(string login, string session, string id)
+        public static async Task<User> GetBenutzerAsync(string login, string session, string id)
         {
-            // Filter single user from user list
-            UserListEntry user = null;
+            // Extract single user from user list
+            User user = null;
             var response = await client.GetStringAsync($"getBenutzer?login={login}&session={session}");
             if (response != null)
             {
-                var userList = JsonConvert.DeserializeObject<GetBenutzerResponse>(response);
-                user = userList.benutzerliste.FirstOrDefault(u => u.loginName == id);
+                var getBenutzerResponse = JsonConvert.DeserializeObject<GetBenutzerResponse>(response);
+                user = getBenutzerResponse.benutzerliste.FirstOrDefault(u => u.loginName == id);
             }
             return user;
         }

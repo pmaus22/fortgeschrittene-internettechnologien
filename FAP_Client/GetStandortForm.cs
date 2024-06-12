@@ -20,7 +20,7 @@ namespace FAP_Client
         private readonly HeatmapProvider provider;
 
         // List to store user data for logical operations
-        private static readonly List<UserListEntry> UserList = new List<UserListEntry>();
+        private static readonly List<User> UserList = new List<User>();
 
         // BindingLists for user list box and heatmap
         private readonly BindingList<string> UserListDisplayItems = new BindingList<string>();
