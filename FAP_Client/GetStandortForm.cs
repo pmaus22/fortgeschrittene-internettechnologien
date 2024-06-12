@@ -4,6 +4,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FAP_Client
 {
@@ -53,7 +55,6 @@ namespace FAP_Client
             listBoxUserList.DataSource = UserList;
             adapter.DataSource = LocationList;
 
-            //TODO: auto refresh locations
             // TODO: delete item from userlist feature
         }
 
@@ -155,6 +156,12 @@ namespace FAP_Client
         {
             // Exit app when main window is closed
             Application.Exit();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            // Refresh Locations on button click event
+            RefreshLocationList();
         }
     }
 }

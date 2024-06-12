@@ -44,6 +44,7 @@
             this.labelMessageGetUser = new System.Windows.Forms.Label();
             this.listBoxUserList = new System.Windows.Forms.ListBox();
             this.labelMessageZoom = new System.Windows.Forms.Label();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mapControl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -180,11 +181,26 @@
             this.labelMessageZoom.Size = new System.Drawing.Size(0, 32);
             this.labelMessageZoom.TabIndex = 20;
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonRefresh.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh.Location = new System.Drawing.Point(628, 958);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(202, 53);
+            this.buttonRefresh.TabIndex = 21;
+            this.buttonRefresh.Text = "Aktualisieren";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // GetStandortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelMessageZoom);
             this.Controls.Add(this.listBoxUserList);
             this.Controls.Add(this.labelMessageGetUser);
@@ -227,5 +243,6 @@
         private System.Windows.Forms.Label labelMessageGetUser;
         private System.Windows.Forms.ListBox listBoxUserList;
         private System.Windows.Forms.Label labelMessageZoom;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
