@@ -31,7 +31,7 @@ namespace FAP_Client
             };
 
             // Send login request to server
-            var loginResponse = await Program.LoginAsync(loginBody);
+            var loginResponse = await ApiController.LoginAsync(loginBody);
 
             // Save username and session ID, close login window and open main app
             if (loginResponse.sessionID != null)

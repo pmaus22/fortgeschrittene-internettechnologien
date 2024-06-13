@@ -67,7 +67,7 @@ namespace FAP_Client
             // Get location for every user in the list
             for (int i = 0; i < UserList.Count; i++)
             {
-                var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, UserList[i].loginName);
+                var standort = await ApiController.GetStandortAsync(CurrentLoginName, CurrentSessionID, UserList[i].loginName);
                 LocationList[i] = standort;
             }
         }
@@ -87,13 +87,13 @@ namespace FAP_Client
             if (!UserList.Any(u => u.loginName == textBoxUserId.Text))
             {
                 // Send request to server to get user data
-                var user = await Program.GetBenutzerAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+                var user = await ApiController.GetBenutzerAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
 
                 // Get location if user exists
                 if (user != null)
                 {
                     // Get location for the entered username
-                    var standort = await Program.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
+                    var standort = await ApiController.GetStandortAsync(CurrentLoginName, CurrentSessionID, textBoxUserId.Text);
 
                     // Show error message if server responds with null
                     if (standort == null)
@@ -182,7 +182,7 @@ namespace FAP_Client
             };
 
             // Send logout request to server
-            await Program.LogoutAsync(logoutBody);
+            await ApiController.LogoutAsync(logoutBody);
 
             // Clear user data, close main app and open login window
             CurrentSessionID = null;

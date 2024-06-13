@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FAP_Client
 {
-    public static class Program
+    public static class ApiController
     {
         // Client object for HTTP requests.
         static readonly HttpClient client = new HttpClient();

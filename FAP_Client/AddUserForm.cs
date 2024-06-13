@@ -19,7 +19,7 @@ namespace FAP_Client
             if (textBoxPlz.Text.Length == 5 && textBoxPlz.Text.All(char.IsDigit))
             {
                 // Send request to server to get the corresponding place
-                var getOrtResponse = await Program.GetOrtAsync(textBoxPlz.Text, "pmaus22");
+                var getOrtResponse = await ApiController.GetOrtAsync(textBoxPlz.Text, "pmaus22");
 
                 // Fill place name automatically when the server responds successfully
                 try
@@ -44,7 +44,7 @@ namespace FAP_Client
             else
             {
                 // Send request to server to check login name
-                var boolResponse = await Program.CheckLoginNameAsync(textBoxLoginName.Text);
+                var boolResponse = await ApiController.CheckLoginNameAsync(textBoxLoginName.Text);
 
                 // Say that login name is available
                 if (boolResponse.ergebnis)
@@ -89,7 +89,7 @@ namespace FAP_Client
                 };
 
                 // Send request to the server to add new user
-                var addUserResponse = await Program.AddUserAsync(user);
+                var addUserResponse = await ApiController.AddUserAsync(user);
 
                 // Close window after successful user registration
                 if (addUserResponse.ergebnis)

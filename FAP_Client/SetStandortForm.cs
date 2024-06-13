@@ -23,7 +23,7 @@ namespace FAP_Client
             if (textBoxPlz.Text.Length == 5 && textBoxPlz.Text.All(char.IsDigit))
             {
                 // Send request to server to get the corresponding place (using the geonames.org username)
-                var getOrtResponse = await Program.GetOrtAsync(textBoxPlz.Text, "pmaus22");
+                var getOrtResponse = await ApiController.GetOrtAsync(textBoxPlz.Text, "pmaus22");
 
                 // Fill place name automatically when the server responds successfully
                 try
@@ -39,7 +39,7 @@ namespace FAP_Client
         private async void buttonOk_Click(object sender, EventArgs e)
         {
             // Send request to server to get latidude and longitude from entered address
-            var standort = await Program.GetStandortPerAdresseAsync(textBoxLand.Text, textBoxPlz.Text, textBoxOrt.Text, textBoxStrasse.Text);
+            var standort = await ApiController.GetStandortPerAdresseAsync(textBoxLand.Text, textBoxPlz.Text, textBoxOrt.Text, textBoxStrasse.Text);
                 
             if (standort != null)
             {
@@ -52,7 +52,7 @@ namespace FAP_Client
                 };
 
                 // Send request to server to set new user location using the obtained latitude and longitude values
-                var boolResponse = await Program.SetStandortAsync(setStandortBody);
+                var boolResponse = await ApiController.SetStandortAsync(setStandortBody);
 
                 // Refresh location list and close window when location was set sucessfully
                 if (boolResponse.ergebnis)
