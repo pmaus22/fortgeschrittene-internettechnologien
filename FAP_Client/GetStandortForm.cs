@@ -23,7 +23,7 @@ namespace FAP_Client
         private static readonly List<User> UserList = new List<User>();
 
         // BindingLists for user list box and heatmap
-        private readonly BindingList<string> UserListDisplayItems = new BindingList<string>();
+        private static readonly BindingList<string> UserListDisplayItems = new BindingList<string>();
         private static readonly BindingList<Standort> LocationList = new BindingList<Standort>();
 
         public GetStandortForm()
