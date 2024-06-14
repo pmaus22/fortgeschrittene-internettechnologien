@@ -13,14 +13,14 @@ namespace FAP_Client
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            // Open registration window
+            // Open registration window.
             AddUserForm addUser = new AddUserForm();
             addUser.Show();
         }
 
         private async void buttonLogin_Click(object sender, EventArgs e)
         {
-            // Create new object with login data
+            // Create new object with login data.
             var loginBody = new LoginBody
             {
                 loginName = textBoxLoginName.Text,
@@ -30,10 +30,10 @@ namespace FAP_Client
                 }
             };
 
-            // Send login request to server
+            // Send login request to server.
             var loginResponse = await ApiController.LoginAsync(loginBody);
 
-            // Save username and session ID, close login window and open main app
+            // Save username and session ID, close login window and open main app.
             if (loginResponse.sessionID != null)
             {
                 GetStandortForm.CurrentLoginName = textBoxLoginName.Text;
@@ -43,7 +43,7 @@ namespace FAP_Client
                 getStandort.Show();
             }
 
-            // Show error message when login fails
+            // Show error message when login fails.
             else
             {
                 labelMessage.Text = "⚠️ Falsche Anmeldedaten";
@@ -52,7 +52,7 @@ namespace FAP_Client
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Exit app when login window is closed
+            // Exit app when login window is closed.
             Application.Exit();
         }
     }
